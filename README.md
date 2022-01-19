@@ -2,17 +2,29 @@
 
 > 作者：杨夕
 > 
-> 项目地址：https://github.com/km1994/nlp_paper_study
+> 介绍：研读顶会论文，复现论文相关代码
 > 
-> 个人介绍：大佬们好，我叫杨夕，该项目主要是本人在研读顶会论文和复现经典论文过程中，所见、所思、所想、所闻，可能存在一些理解错误，希望大佬们多多指正。
+> NLP 百面百搭 地址：https://github.com/km1994/NLP-Interview-Notes
 > 
-> NLP 面经地址：https://github.com/km1994/NLP-Interview-Notes
+> **[手机版NLP百面百搭](https://mp.weixin.qq.com/s?__biz=MzAxMTU5Njg4NQ==&mid=100005719&idx=3&sn=5d8e62993e5ecd4582703684c0d12e44&chksm=1bbff26d2cc87b7bf2504a8a4cafc60919d722b6e9acbcee81a626924d80f53a49301df9bd97&scene=18#wechat_redirect)**
+> 
+> 推荐系统 百面百搭 地址：https://github.com/km1994/RES-Interview-Notes
+> 
+> **[手机版推荐系统百面百搭](https://mp.weixin.qq.com/s/b_KBT6rUw09cLGRHV_EUtw)**
+> 
+> 搜索引擎 百面百搭 地址：https://github.com/km1994/search-engine-Interview-Notes 【编写ing】
+> 
+> NLP论文学习笔记：https://github.com/km1994/nlp_paper_study
+> 
+> 推荐系统论文学习笔记：https://github.com/km1994/RS_paper_study
+> 
+> GCN 论文学习笔记：https://github.com/km1994/GCN_study
 
 ![](other_study/resource/pic/微信截图_20210301212242.png)
 
-> NLP && 推荐学习群【人数满了，加微信 blqkm601 】
+> **关注公众号 【关于NLP那些你不知道的事】 加入 【NLP && 推荐学习群】一起学习！！！**
 
-![](other_study/resource/pic/20210523220743.png)
+> 注：github 网页版 看起来不舒服，可以看 **[手机版NLP论文学习笔记](https://mp.weixin.qq.com/s?__biz=MzAxMTU5Njg4NQ==&mid=100005719&idx=1&sn=14d34d70a7e7cbf9700f804cca5be2d0&chksm=1bbff26d2cc87b7b9d2ed12c8d280cd737e270cd82c8850f7ca2ee44ec8883873ff5e9904e7e&scene=18#wechat_redirect)**
 
 - [【关于 NLP】 那些你不知道的事](#关于-nlp-那些你不知道的事)
   - [介绍](#介绍)
@@ -22,38 +34,46 @@
       - [理论学习篇](#理论学习篇)
         - [经典论文研读篇](#经典论文研读篇)
         - [【关于 transformer 】 那些的你不知道的事](#关于-transformer--那些的你不知道的事)
-        - [【关于 Dropout】 那些你不知道的事](#关于-dropout-那些你不知道的事)
         - [【关于 预训练模型】 那些的你不知道的事](#关于-预训练模型-那些的你不知道的事)
+        - [【关于 Prompt】 那些的你不知道的事](#关于-prompt-那些的你不知道的事)
+          - [【关于 Prompt For NER】 那些的你不知道的事](#关于-prompt-for-ner-那些的你不知道的事)
         - [【关于 信息抽取】 那些的你不知道的事](#关于-信息抽取-那些的你不知道的事)
           - [【关于 实体关系联合抽取】 那些的你不知道的事](#关于-实体关系联合抽取-那些的你不知道的事)
           - [【关于 命名实体识别】那些你不知道的事](#关于-命名实体识别那些你不知道的事)
           - [【关于 关系抽取】那些你不知道的事](#关于-关系抽取那些你不知道的事)
           - [【关于 文档级别关系抽取】那些你不知道的事](#关于-文档级别关系抽取那些你不知道的事)
           - [【关于 事件抽取】那些你不知道的事](#关于-事件抽取那些你不知道的事)
+          - [【关于 关键词提取】 那些你不知道的事](#关于-关键词提取-那些你不知道的事)
+          - [【关于 新词发现】 那些你不知道的事](#关于-新词发现-那些你不知道的事)
         - [【关于 知识图谱 】 那些的你不知道的事](#关于-知识图谱--那些的你不知道的事)
           - [【关于 实体链指篇】 那些的你不知道的事](#关于-实体链指篇-那些的你不知道的事)
           - [【关于 实体消歧 】 那些的你不知道的事](#关于-实体消歧--那些的你不知道的事)
           - [【关于KGQA 】 那些的你不知道的事](#关于kgqa--那些的你不知道的事)
           - [【关于Neo4j  】 那些的你不知道的事](#关于neo4j---那些的你不知道的事)
-        - [【关于 细粒度情感分析】 那些的你不知道的事](#关于-细粒度情感分析-那些的你不知道的事)
-        - [【关于 主动学习】 那些的你不知道的事](#关于-主动学习-那些的你不知道的事)
-        - [【关于 对抗训练】 那些的你不知道的事](#关于-对抗训练-那些的你不知道的事)
-        - [【关于 GCN in NLP 】那些你不知道的事](#关于-gcn-in-nlp-那些你不知道的事)
-        - [【关于 文本预处理】 那些的你不知道的事](#关于-文本预处理-那些的你不知道的事)
-        - [【关于问答系统】 那些的你不知道的事](#关于问答系统-那些的你不知道的事)
+        - [【关于 NLP Trick】 那些你不知道的事](#关于-nlp-trick-那些你不知道的事)
+          - [【关于 Dropout】 那些你不知道的事](#关于-dropout-那些你不知道的事)
+          - [【关于 主动学习】 那些的你不知道的事](#关于-主动学习-那些的你不知道的事)
+          - [【关于 对抗训练】 那些的你不知道的事](#关于-对抗训练-那些的你不知道的事)
+          - [【关于 文本预处理】 那些的你不知道的事](#关于-文本预处理-那些的你不知道的事)
+          - [【关于 半监督学习】 那些的你不知道的事](#关于-半监督学习-那些的你不知道的事)
+          - [【关于 GCN in NLP 】那些你不知道的事](#关于-gcn-in-nlp-那些你不知道的事)
+        - [【关于 问答系统】 那些的你不知道的事](#关于-问答系统-那些的你不知道的事)
+          - [【关于 FAQ 】那些你不知道的事](#关于-faq-那些你不知道的事)
+          - [【关于 多轮检索 】那些你不知道的事](#关于-多轮检索-那些你不知道的事)
+          - [【关于 KBFAQ 】那些你不知道的事](#关于-kbfaq-那些你不知道的事)
+        - [【关于 对话系统】 那些的你不知道的事](#关于-对话系统-那些的你不知道的事)
+          - [【关于 自然语言理解 NLU】那些你不知道的事](#关于-自然语言理解-nlu那些你不知道的事)
+          - [【关于 状态追踪（DST）】那些你不知道的事](#关于-状态追踪dst那些你不知道的事)
+          - [【关于 自然语言生成NLG 】那些你不知道的事](#关于-自然语言生成nlg-那些你不知道的事)
+          - [【关于 E2E 】那些你不知道的事](#关于-e2e-那些你不知道的事)
+          - [【关于 Rasa 】 那些的你不知道的事](#关于-rasa--那些的你不知道的事)
         - [【关于 文本摘要】 那些的你不知道的事](#关于-文本摘要-那些的你不知道的事)
         - [【关于 文本匹配】 那些的你不知道的事](#关于-文本匹配-那些的你不知道的事)
         - [【关于 机器翻译】 那些的你不知道的事](#关于-机器翻译-那些的你不知道的事)
         - [【关于 文本生成】 那些的你不知道的事](#关于-文本生成-那些的你不知道的事)
-        - [【关于 对话系统】 那些的你不知道的事](#关于-对话系统-那些的你不知道的事)
-          - [【关于 自然语言生成NLG 】那些你不知道的事](#关于-自然语言生成nlg-那些你不知道的事)
-          - [【关于 E2E 】那些你不知道的事](#关于-e2e-那些你不知道的事)
-        - [【关于 Rasa 】 那些的你不知道的事](#关于-rasa--那些的你不知道的事)
-        - [【关于 半监督学习】 那些的你不知道的事](#关于-半监督学习-那些的你不知道的事)
         - [【关于 NLP分类任务】那些你不知道的事](#关于-nlp分类任务那些你不知道的事)
+          - [【关于 细粒度情感分析】 那些的你不知道的事](#关于-细粒度情感分析-那些的你不知道的事)
         - [【关于 中文分词】那些你不知道的事](#关于-中文分词那些你不知道的事)
-        - [【关于 关键词提取】 那些你不知道的事](#关于-关键词提取-那些你不知道的事)
-        - [【关于 新词发现】 那些你不知道的事](#关于-新词发现-那些你不知道的事)
         - [【关于 搜索引擎】 那些你不知道的事](#关于-搜索引擎-那些你不知道的事)
         - [【关于 文本纠错】 那些你不知道的事](#关于-文本纠错-那些你不知道的事)
         - [【关于 Text-to-SQL】 那些你不知道的事](#关于-text-to-sql-那些你不知道的事)
@@ -62,7 +82,7 @@
     - [会议收集篇](#会议收集篇)
     - [Elastrsearch 学习篇](#elastrsearch-学习篇)
     - [竞赛篇](#竞赛篇)
-      - [【关于 NLP比赛】 那些你不知道的事](#关于-nlp比赛-那些你不知道的事)
+      - [【关于 NLP比赛】 那些你不知道的事 【点击查看详情】](#关于-nlp比赛-那些你不知道的事-点击查看详情)
       - [【关于 NLP 比赛方案学习】 那些你不知道的事](#关于-nlp-比赛方案学习-那些你不知道的事)
         - [【关于 NLP 比赛方案学习】 那些你不知道的事](#关于-nlp-比赛方案学习-那些你不知道的事-1)
     - [学习资源](#学习资源)
@@ -209,16 +229,6 @@
       - 4.18  Compressive Transformers
     - 五、总结
 
-##### 【关于 Dropout】 那些你不知道的事
-
-- [【关于 R-Drop】 那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/Dropout/R-Drop/)  
-  - 论文：R-Drop: Regularized Dropout for Neural Networks
-  - 论文下载地址：https://arxiv.org/abs/2106.14448
-  - 论文代码：https://github.com/dropreg/R-Drop
-  - 论文动机：
-    - 由于深度神经网络非常容易过拟合，因此 Dropout 方法采用了随机丢弃每层的部分神经元，以此来避免在训练过程中的过拟合问题。**正是因为每次随机丢弃部分神经元，导致每次丢弃后产生的子模型都不一样，所以 Dropout 的操作一定程度上使得训练后的模型是一种多个子模型的组合约束。**基于 Dropout 的这种特殊方式对网络带来的随机性，研究员们提出了 R-Drop 来进一步对（子模型）网络的输出预测进行了正则约束。
-  - 论文方法：与传统作用于神经元（Dropout）或者模型参数（DropConnect）上的约束方法不同，R-Drop **作用于模型的输出层**，弥补了 Dropout 在训练和测试时的不一致性。简单来说就是在每个 mini-batch 中，**每个数据样本过两次带有 Dropout 的同一个模型，R-Drop 再使用 KL-divergence 约束两次的输出一致**。
-  - 作用：**R-Drop 约束了由于 Dropout 带来的两个随机子模型的输出一致性**。
 
 ##### 【关于 预训练模型】 那些的你不知道的事
 
@@ -255,6 +265,36 @@
         - XLNet将最先进的自回归模型Transformer-XL的思想整合到预训练中【解决 Bert 的 Max Len 为 512】
       - 微调：直接利用 特定任务数据 微调
     - 优点：
+    - 缺点：
+  - [【关于 Bart】 那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/bert_study/BART/)
+    - 论文：Bart: Denoising sequence-to-sequence pre-training for natural language generation, translation, and comprehension
+    - 来源：Facebook 
+    - 论文地址：https://mp.weixin.qq.com/s/42rYlyjQsh4loFKRdhJlIg
+    - 开源代码：https://github.com/renatoviolin/Bart_T5-summarization
+    - 阅读理由：Bert 问题上的改进
+    - 动机：
+      - BERT：用掩码替换随机 token，双向编码文档。由于缺失 token 被单独预测，因此 BERT 较难用于生成任务;
+      - GPT：使用自回归方式预测 token，这意味着 GPT 可用于生成任务。但是，该模型仅基于左侧上下文预测单词，无法学习双向交互
+    - 介绍：用于预训练序列到序列模型的去噪自动编码器
+    - 思路：
+      - 预训练：
+        - (1) 使用任意噪声函数破坏文本;
+          - Token Masking（token 掩码）：按照 BERT 模型，BART 采样随机 token，并用 [MASK]标记 替换它们；
+          - Sentence Permutation（句子排列变换）：按句号将文档分割成多个句子，然后以随机顺序打乱这些句子；
+          - Document Rotation（文档旋转）：随机均匀地选择 token，旋转文档使文档从该 token 开始。该任务的目的是训练模型识别文档开头；
+          - Token Deletion（token 删除）：从输入中随机删除 token。与 token 掩码不同，模型必须确定缺失输入的位置；
+          - Text Infilling（文本填充）：采样多个文本段，文本段长度取决于泊松分布 (λ = 3)。用单个掩码 token 替换每个文本段。长度为 0 的文本段对应掩码 token 的插入；
+        - (2) 学习模型以重建原始文本。
+        - Two-Stream Self-Attention for Target-Aware Representations【解决PLM出现的目标预测歧义】 
+        - XLNet将最先进的自回归模型Transformer-XL的思想整合到预训练中【解决 Bert 的 Max Len 为 512】
+      - 微调：
+        - Sequence Classification Task 序列分类任务: 将相同的输入，输入到encoder和decoder中，最后将decoder的最后一个隐藏节点作为输出，输入到分类层（全连接层）中，获取最终的分类的结果;
+        - Token Classification Task 序列分类任务: 将完整文档输入到编码器和解码器中，使用解码器最上方的隐藏状态作为每个单词的表征。该表征的用途是分类 token;
+        - Sequence Generation Task 序列生成任务: 编码器的输入是输入序列，解码器以自回归的方式生成输出;
+        - Machine Translation 机器翻译: 将BART的encoder端的embedding层替换成randomly initialized encoder，新的encoder也可以用不同的vocabulary。通过新加的Encoder，我们可以将新的语言映射到BART能解码到English(假设BART是在English的语料上进行的预训练)的空间. 具体的finetune过程分两阶段:
+          1. 第一步只更新randomly initialized encoder + BART positional embedding + BART的encoder第一层的self-attention 输入映射矩阵。
+          2. 第二步更新全部参数，但是只训练很少的几轮。
+    - 优点：它使用标准的基于 Transformer 的神经机器翻译架构，尽管它很简单，但可以看作是对 BERT（由于双向编码器）、GPT（带有从左到右的解码器）和许多其他最近的预训练方案的泛化.
     - 缺点：
   - [【关于 RoBERTa】 那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/bert_study/T4_RoBERTa/) 
     - 阅读理由：Bert 问题上的改进
@@ -403,23 +443,66 @@
       - 目标：analyze and interpret pre-trained models，测量一个单词xj对预测另一个单词xi的影响，然后从该单词间信息中得出全局语言属性（例如，依赖树）。
   - 思想：整体思想很直接，句法结构，其实本质上描述的是词和词之间的某种关系，如果我们能从BERT当中拿到词和词之间相互“作用”的信息，就能利用一些算法解析出句法结构。 
 
-- [【关于中文预训练模型】那些你不知道的事]((https://github.com/km1994/nlp_paper_study/tree/master/bert_study/Chinese/)
-  - [【关于ChineseBERT】那些你不知道的事]((https://github.com/km1994/nlp_paper_study/tree/master/bert_study/Chinese/ChineseBERT/)
-  - 论文名称：ChineseBERT: Chinese Pretraining Enhanced by Glyph and Pinyin Information
-  - 会议： ACL2021
-  - 论文地址：https://arxiv.org/abs/2106.16038
-  - 论文源码地址：https://github.com/ShannonAI/ChineseBert
-  - 模型下载：https://huggingface.co/hfl/chinese-bert-wwm-ext/tree/main
-  - 动机：最近的中文预训练模型忽略了中文特有的两个重要方面：字形和拼音，它们为语言理解携带重要的句法和语义信息。
-  - 论文工作：提出了 ChineseBERT，它将汉字的 {\it glyph} 和 {\it pinyin} 信息合并到语言模型预训练中。
-    - embedding 层：将 字符嵌入（char embedding）、字形嵌入（glyph embedding）和拼音嵌入（pinyin embedding） 做拼接；
-    - Fusion Layer 层：将 拼接后的 embedding 向量 做 Fusion 得到 一个 d 维的 Fusion embedding;
-    - 位置拼接：将 Fusion embedding 和 位置嵌入（position embedding）、片段嵌入（segment embedding）相加；
-    - Transformer-Encoder层;
-  - 改进点：
-    - 在底层的融合层（Fusion Layer）融合了除字嵌入（Char Embedding）之外的字形嵌入（Glyph Embedding）和拼音嵌入（Pinyin Embedding），得到融合嵌入（Fusion Embedding），再与位置嵌入相加，就形成模型的输入；
-    - 抛弃预训练任务中的NSP任务。 由于预训练时没有使用NSP任务，因此模型结构图省略了片段嵌入（segment embedding）。实际上下游任务输入为多个段落时（例如：文本匹配、阅读理解等任务），是采用了segment embedding；
-  - 实验结果：在大规模未标记的中文语料库上进行预训练，提出的 ChineseBERT 模型在训练步骤较少的情况下显着提高了基线模型的性能。 porpsoed 模型在广泛的中文 NLP 任务上实现了新的 SOTA 性能，包括机器阅读理解、自然语言推理、文本分类、句子对匹配和命名实体识别中的竞争性能。
+- [【关于中文预训练模型】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/bert_study/Chinese/)
+  - [【关于ChineseBERT】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/bert_study/Chinese/ChineseBERT/)
+    - 论文名称：ChineseBERT: Chinese Pretraining Enhanced by Glyph and Pinyin Information
+    - 会议： ACL2021
+    - 论文地址：https://arxiv.org/abs/2106.16038
+    - 论文源码地址：https://github.com/ShannonAI/ChineseBert
+    - 模型下载：https://huggingface.co/hfl/chinese-bert-wwm-ext/tree/main
+    - 动机：最近的中文预训练模型忽略了中文特有的两个重要方面：字形和拼音，它们为语言理解携带重要的句法和语义信息。
+    - 论文工作：提出了 ChineseBERT，它将汉字的 {\it glyph} 和 {\it pinyin} 信息合并到语言模型预训练中。
+      - embedding 层：将 字符嵌入（char embedding）、字形嵌入（glyph embedding）和拼音嵌入（pinyin embedding） 做拼接；
+      - Fusion Layer 层：将 拼接后的 embedding 向量 做 Fusion 得到 一个 d 维的 Fusion embedding;
+      - 位置拼接：将 Fusion embedding 和 位置嵌入（position embedding）、片段嵌入（segment embedding）相加；
+      - Transformer-Encoder层;
+    - 改进点：
+      - 在底层的融合层（Fusion Layer）融合了除字嵌入（Char Embedding）之外的字形嵌入（Glyph Embedding）和拼音嵌入（Pinyin Embedding），得到融合嵌入（Fusion Embedding），再与位置嵌入相加，就形成模型的输入；
+      - 抛弃预训练任务中的NSP任务。 由于预训练时没有使用NSP任务，因此模型结构图省略了片段嵌入（segment embedding）。实际上下游任务输入为多个段落时（例如：文本匹配、阅读理解等任务），是采用了segment embedding；
+    - 实验结果：在大规模未标记的中文语料库上进行预训练，提出的 ChineseBERT 模型在训练步骤较少的情况下显着提高了基线模型的性能。 porpsoed 模型在广泛的中文 NLP 任务上实现了新的 SOTA 性能，包括机器阅读理解、自然语言推理、文本分类、句子对匹配和命名实体识别中的竞争性能。
+
+##### 【关于 Prompt】 那些的你不知道的事
+
+###### 【关于 Prompt For NER】 那些的你不知道的事
+
+- [【关于 templateNER】 那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/prompt/Template-BasedNERUsingBART)
+  - 论文名称：Template-Based Named Entity Recognition Using BART
+  - 会议：ACL 2020
+  - 论文链接：https://aclanthology.org/2021.findings-acl.161/
+  - 论文 github 地址：https://github.com/Nealcly/templateNER
+  - 小样本NER：源领域数据多，目标领域数据少
+  - 现有方法：基于相似性的度量
+    - 缺点：不能利用模型参数中的知识进行迁移
+  - 论文方法：提出基于模板的方法
+    - NER看作一种语言模型排序问题，seq2seq框架
+    - 原始句子和模板分别作为源序列和模板序列，由候选实体span填充
+    - 推理：根据相应的模板分数对每个候选span分类
+  - 数据集
+    - 在 CoNLL03（资源丰富的任务）上达到了 92.55%的 F1score
+    - 明显优于在 MIT Movie、MIT Restaurant 和ATIS（低资源任务）
+- [【关于 LightNER】 那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/prompt/LightNER)
+  - 论文名称：LightNER: A Lightweight Generative Framework with Prompt-guided Attention for Low-resource NER
+  - 会议：
+  - 论文链接：https://arxiv.org/pdf/2109.00720.pdf
+  - 论文 github 地址：
+  - 论文动机
+    - 传统的 NER 方法：
+      - 方法：在BERT的顶层加classifier来做token-level的分类；
+      - 存在问题：**低资源场景下泛化性不强**。在低资源场景中，即target domain上的带标注数据比较有限的时候，source domain和target domain的label可能会不同，没法共享一个classifier，对target domain上unseen class的泛化性并不好
+    - 低资源的NER传统方法：
+      - 方法：基于度量学习的方式
+      - 存在问题：因为在test set上执行预测的时候是依靠相似度度量，不涉及到模型参数更新，所以**需要source domain和target domain具有相似的pattern**，这样就会**导致在cross-domain的问题上表现不好**。
+    - template-based NER：
+      - 方法：迭代所有可能的span，然后对每个span构造一个template去预测
+      - 存在问题：复杂度高，同时也需要设计template
+  - 论文方法：
+    - BARTNER的框架：
+      - 输入:一个句子;
+      - 输出是：实体的序列;
+      - 每个实体包括：实体span在输入句子中的start index，end index，以及实体类型（tag，实际也是index）；
+      - 在decoder端，输出的hidden state与输入序列的编码以及tag序列的编码做点积+softmax，转换为在输入句子词表+tag词表中的概率分布。
+    - Semantic-aware Answer Space：实际就是说NER中很多实体类型比较复杂，是由多个单词组合而成的，比如：return_date.month_name。因此，针对这个tag，把他分解成单个word进行编码，然后加权得到tag的表示，这个权重也是学出来的。
+    - Prompt-guided Attention：实际就是使用soft prompt，是在encoder和decoder的每层的attention部分加入key和value的可微调参数，其他都是固定的。
 
 ##### [【关于 信息抽取】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/information_extraction/)
 
@@ -445,7 +528,56 @@
       - 解答：并不认为误差传播问题不存在或无法解决，而需要探索更好的解决方案来解决此问题
     - Q4：Effect of Cross-sentence Context
       - 解答：使用跨句上下文可以明显改善实体和关系
+- [【关于 PRGC】 那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/information_extraction/ERE_study/PRGC)
+  - 论文：PRGC: Potential Relation and Global Correspondence Based JointRelational Triple Extraction
+  - 来源：ACL 2021
+  - 论文地址：https://arxiv.org/pdf/2106.09895
+  - 开源代码：https://github.com/hy-struggle/PRGC
+  - 动机：从非结构化文本中联合提取实体和关系是信息提取中的一项关键任务。最近的方法取得了可观的性能，但仍然存在一些固有的局限性：
+    - 关系预测的冗余：TPLinker 为了避免曝光偏差，它利用了相当复杂的解码器，导致了稀疏的标签，关系冗余；
+    - span-based 的提取泛化性差和效率低下;
+  - 论文方法：
+    - 从新颖的角度将该任务分解为三个子任务：
+      - Relation  Judgement；
+      - Entity  Extraction；
+      - Subject-object Alignment；
+    - 然后提出了一个基于 Potential Relation and Global Correspondence (PRGC) 的联合关系三重提取框架：
+      - **Potential Relation Prediction**：给定一个句子，模型先预测一个可能存在关系的子集，以及得到一个全局矩阵；
+      - **Relation-Specific Sequence Tagging**：然后执行序列标注，标注存在的主体客体，以处理 subjects  and  object 之间的重叠问题；
+      - **Global Correspondence**：枚举所有实体对，由全局矩阵裁剪；
+    - 实验结果：PRGC 以更高的效率在公共基准测试中实现了最先进的性能，并在重叠三元组的复杂场景中提供了一致的性能增益
 - [【关于 实体关系联合抽取】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/information_extraction/ERE_study/实体关系联合抽取总结.md)
+  1. pipeline  方法
+     1. 思路：先命名实体识别（ NER） , 在 关系抽取（RE）
+     2. 问题：
+        1. 忽略两任务间的相关性
+        2. 误差传递。NER 的误差会影响 RE 的性能
+  2. end2end 方法
+     1. 解决问题：实体识别、关系分类
+     2. 思路：
+        1. 实体识别
+           1. BIOES 方法：提升召回？和文中出现的关系相关的实体召回
+           2. 嵌套实体识别方法：解决实体之间有嵌套关系问题
+           3. 头尾指针方法：和关系分类强相关？和关系相关的实体召回
+           4. copyre方法
+        2. 关系分类：
+           1. 思路：判断 【实体识别】步骤所抽取出的实体对在句子中的关系
+           2. 方法：
+              1. 方法1：1. 先预测头实体，2. 再预测关系、尾实体
+              2. 方法2：1. 根据预测的头、尾实体预测关系
+              3. 方法3：1. 先找关系，再找实体 copyre
+           3. 需要解决的问题：
+              1. 关系重叠
+              2. 关系间的交互
+  3. 论文介绍
+     1. 【paper 1】Joint entity recognition and relation extraction as a multi-head selection problem
+     2. 【paper 2】Joint Extraction of Entities and Relations Based on a Novel Decomposition Strategy[ACL2017]
+     3. 【paper 3】GraphRel:Modeling Text as Relational Graphs for Joint Entity and Relation Extraction [ACL2019]
+     4. 【paper 4】CopyMTL: Copy Mechanism for Joint Extraction of Entities and Relations with Multi-Task Learning [AAAI2020]
+     5. 【paper 5】Span-based Joint Entity and Relation Extraction with Transformer Pre-training [ECAI 2020]
+     6. 【paper 6】A Novel Cascade Binary Tagging Framework for Relational Triple Extraction[ACL2020]
+     7. 【paper 7】END-TO-END NAMED ENTITY RECOGNITION AND RELATION EXTRACTION USING PRE-TRAINED LANGUAGE MODELS
+
 - [Incremental Joint Extraction of Entity Mentions and Relations](https://github.com/km1994/nlp_paper_study/tree/master/information_extraction/ERE_study/T2014_joint_extraction/)
 - [【关于 Joint NER】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/information_extraction/ERE_study/JointER/)
   - 论文名称：Joint Extraction of Entities and Relations Based on a Novel Decomposition Strategy
@@ -520,6 +652,26 @@
 
 ###### [【关于 命名实体识别】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/information_extraction/NER_study/)
 
+- [【关于 Few-Shot Named Entity Recognition】 那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/information_extraction/NER_study/FewShotNER)
+  - 论文名称：Few-Shot Named Entity Recognition: A Comprehensive Study
+  - 将 few shot learning 应用于 NER 领域中需要面临的三个核心问题
+    1. How to adapt meta-learning such as prototype-based methods for few-shot NER? （如何将元学习方法作为 prototype-based 的方法应用到 few-shot NER 领域中？）
+    2. How to leverage freely-available web data as noisy supervised pre-training data?（如何利用大量免费可用的网页数据构造出 noisy supervised 方法中的预训练数据？）
+    3. How to leverage unlabeled in-domain sentences in a semi-supervised manner?（如何在半监督的范式中利用好 in-domain 的无标注数据？）
+- [【关于 AutoNER】 那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/information_extraction/NER_study/EMNLP2018_AutoNER)
+  - 论文名称：Learning Named Entity Tagger using Domain-Specific Dictionary
+  - 会议： EMNLP2018
+  - 论文地址：https://arxiv.org/abs/1809.03599
+  - 项目地址：https://github.com/shangjingbo1226/AutoNER
+  - 论文动机：
+    - 基于机器学习的命名实体识别方法：需要 手工标注特征；
+    - 基于深度学习的命名实体识别方法：需要大量标准数据；
+    - 远程监督（结合外部词典）标注数据：生成的嘈杂标签对学习
+  - 论文方法：提出了两种神经模型，以适应字典中嘈杂的远程监督：
+    - 首先，在传统的序列标记框架下，我们提出了一个修改后的模糊 CRF 层来处理具有多个可能标签的标记。
+    - 在确定远程监督中嘈杂标签的性质后，我们超越了传统框架，提出了一种新颖、更有效的神经模型 AutoNER，该模型具有新的 Tie or Break 方案。
+    - 讨论了如何改进远程监督以获得更好的 NER 性能。
+  - 实验结果：在三个基准数据集上进行的大量实验表明，仅使用字典而不需要额外的人力时，AutoNER 实现了最佳性能，并通过最先进的监督基准提供了具有竞争力的结果。
 - [【关于 Continual Learning for NER】那些你不知道的事](#关于-continual-learning-for-ner那些你不知道的事)
   - 会议：AAAI2021
   - 论文：Continual Learning for Named Entity Recognition
@@ -530,7 +682,6 @@
     - (i) 我们展示了如何使 CL 技术适应 NLU 域，以逐步学习 NER 的新实体类型； 
     - (ii) 我们在两个 EnglishNER 数据集上的结果表明，我们的 CL 方法使模型能够不断学习新的实体类型，而不会失去识别先前获得的类型的能力； 
     - (iii) 我们表明我们的半监督策​​略实现了与全监督设置相当的结果。
-
 - [【关于 NER数据存在漏标问题】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/information_extraction/NER_study/UnlabeledEntityProblem/)
   - 一、摘要
   - 二、为什么 数据会存在漏标？
@@ -703,7 +854,6 @@
   - [利用词汇知识通过协同图网络进行中文命名实体识别](https://github.com/km1994/nlp_paper_study/tree/master/information_extraction/NER_study/EMNLP2019/利用词汇知识通过协同图网络进行中文命名实体识别/)
   - [一点注释对引导低资源命名实体识别器有很多好处](https://github.com/km1994/nlp_paper_study/tree/master/information_extraction/NER_study/EMNLP2019/一点注释对引导低资源命名实体识别器有很多好处/)
 
-
 ###### [【关于 关系抽取】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/information_extraction/NRE_paper_study/)
 
 - [End-to-End Relation Extraction using LSTMs on Sequences and Tree Structures【2016】](https://github.com/km1994/nlp_paper_study/tree/master/information_extraction/NRE_paper_study/T2016_LSTM_Tree/)
@@ -751,6 +901,71 @@
     - 首先，为建模句子内部事件关系，我们提出双向解码器用于同时捕捉前向和后向事件依赖；
     - 然后，利用信息聚合器汇总句子语义和事件提及信息；
     - 最后，通过迭代多个由双向解码器和信息聚合器构造的单元，并在每一层传递邻近句子的汇总信息，最终感知到整个文档的语义和事件提及信息。
+
+###### [【关于 关键词提取】 那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/information_extraction/keyword_ex_study/)
+
+- [【关于 关键词提取】 那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/information_extraction/keyword_ex_study/)
+  - 一、TF-IDF关键词提取算法
+    - 1.1 理论基础
+    - 1.2 计算公式
+      - 1.2.1 词频 （Term Frequency，TF）
+      - 1.2.2 逆文本频率(Inverse Document Frequency，IDF)
+      - 1.2.3 TF-IDF
+    - 1.3 应用
+    - 1.4 实战篇
+      - 1.4.1 TF-IDF算法 手撸版
+      - 1.4.2 TF-IDF算法 Sklearn 版
+      - 1.4.3 TF-IDF算法 jieba 版
+  - 二、PageRank算法【1】
+    - 2.1 理论学习
+  - 三、TextRank算法【2】
+    - 3.1 理论学习
+    - 3.2 实战篇
+      - 3.2.1 基于Textrank4zh的TextRank算法版
+      - 3.2.2 基于jieba的TextRank算法实现
+      - 3.2.3 基于SnowNLP的TextRank算法实现
+- [【关于 KeyBERT 】 那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/information_extraction/keyword_ex_study/KeyBert/)
+  - 论文：Sharma, P., & Li, Y. (2019). Self-Supervised Contextual Keyword and Keyphrase Retrieval with Self-Labelling.
+  - 论文地址：https://www.preprints.org/manuscript/201908.0073/download/final_file
+  - 论文代码：https://github.com/MaartenGr/KeyBERT
+  - 一、摘要
+  - 二、动机
+  - 三、论文方法
+  - 四、实践
+    - 4.1 安装
+    - 4.2 KeyBERT 调用
+    - 4.3 语料预处理
+    - 4.4 利用 KeyBert 进行关键词提取
+- [【关于 One2Set 】 那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/information_extraction/keyword_ex_study/kg_one2set/)
+  - 论文名称：One2Set: Generating Diverse Keyphrases as a Set
+  - 论文：https://aclanthology.org/2021.acl-long.354/
+  - 代码：https://github.com/jiacheng-ye/kg_one2set
+  - 会议：ACL2021
+
+###### [【关于 新词发现】 那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/information_extraction/word_discovery/)
+
+- [【关于 新词发现】 那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/information_extraction/word_discovery/)
+- [【关于 AutoPhrase】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/information_extraction/word_discovery/AutoPhrase/)
+  - 论文：AutoPhrase: Automated Phrase Mining from Massive Text Corpora
+  - 会议：IEEE
+  - 论文地址：https://arxiv.org/abs/1702.04457
+  - 源码 Python 版本：https://github.com/luozhouyang/AutoPhraseX
+  - 什么是 Phrase Mining？
+    - 答：Phrase Mining 作为文本分析的基本任务之一，旨在从文本语料库中提取高质量的短语。
+  - hrase Mining 有何用途？
+    - 短语挖掘在各种任务中都很重要，例如信息提取/检索、分类法构建和主题建模。
+  - Phrase Mining 现状？
+    - 大多数现有方法依赖于复杂的、训练有素的语言分析器，因此在没有额外但昂贵的适应的情况下，可能在新领域和流派的文本语料库上表现不佳。虽然也有一些数据驱动的方法来从大量特定领域的文本中提取短语。
+  - Phrase Mining 存在问题？
+    1. 非 自动化
+    2. 需要人类专家来设计规则或标记短语
+    3. 依赖于 语言分析器
+    4. 应用到新的领域效果不好
+  - 论文方法 ？
+    1. Robust Positive-Only Distant Training：使用wiki和freebase作为显眼数据，根据知识库中的相关数据构建Positive Phrases,根据领域内的文本生成Negative Phrases，构建分类器后根据预测的结果减少负标签带来的噪音问题。
+    2. POS-Guided Phrasal Segmentation：使用POS词性标注的结果，引导短语分词，利用POS的浅层句法分析的结果优化Phrase boundaries。
+  - 论文效果 ？
+    - AutoPhrase可以支持任何语言，只要该语言中有通用知识库。与当下最先进的方法比较，新方法在跨不同领域和语言的5个实际数据集上的有效性有了显著提高。
 
 ##### [【关于 知识图谱 】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/KG_study/)
 
@@ -887,28 +1102,56 @@
 
 - [【关于 Neo4j 索引】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/KG_study/neo4j/index.md)
 
-##### [【关于 细粒度情感分析】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/ABSC_study/)
+##### 【关于 NLP Trick】 那些你不知道的事
 
-- [【关于 LCF】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/ABSC_study/LCF/)
-  - 论文名称：A Local Context Focus Mechanism for Aspect-Based Sentiment Classiﬁcation
-  - 论文动机：没有考虑情感极性和局部上下文间关系
-    - LCF:利用自注意力机制同时捕获局部上下文特征和全局上下文特征，以推断 targeted aspect 的情感极性
-    - SRD:评估上下文词与 aspect 间的独立性，SRD对于弄清局部上下文具有重要意义，并且SRD阈值中的上下文单词的特征将得到保留和重点关注。
-    - CDM 和 CDW 层：强化 LCF，使其对 特殊 aspest 的局部上下文提供 更多 注意力。CDM层通过掩盖语义相对较少的上下文词的输出表示，将重点放在局部上下文上。 CDW 层根据 SRD 削弱语义相对较少的上下文词的特征；
-  
-##### [【关于 主动学习】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/active_learn_study/)
+###### 【关于 Dropout】 那些你不知道的事
+
+- [【关于 R-Drop】 那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/trick/Dropout/R-Drop/)  
+  - 论文：R-Drop: Regularized Dropout for Neural Networks
+  - 论文下载地址：https://arxiv.org/abs/2106.14448
+  - 论文代码：https://github.com/dropreg/R-Drop
+  - 论文动机：
+    - 由于深度神经网络非常容易过拟合，因此 Dropout 方法采用了随机丢弃每层的部分神经元，以此来避免在训练过程中的过拟合问题。**正是因为每次随机丢弃部分神经元，导致每次丢弃后产生的子模型都不一样，所以 Dropout 的操作一定程度上使得训练后的模型是一种多个子模型的组合约束。**基于 Dropout 的这种特殊方式对网络带来的随机性，研究员们提出了 R-Drop 来进一步对（子模型）网络的输出预测进行了正则约束。
+  - 论文方法：与传统作用于神经元（Dropout）或者模型参数（DropConnect）上的约束方法不同，R-Drop **作用于模型的输出层**，弥补了 Dropout 在训练和测试时的不一致性。简单来说就是在每个 mini-batch 中，**每个数据样本过两次带有 Dropout 的同一个模型，R-Drop 再使用 KL-divergence 约束两次的输出一致**。
+  - 作用：**R-Drop 约束了由于 Dropout 带来的两个随机子模型的输出一致性**。
+
+###### [【关于 主动学习】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/trick/active_learn_study/)
 
 - [【关于 Proactive Learning for Named Entity Recognition（命名实体识别的主动学习）】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/DL_algorithm/active_learn_study/ProactiveLearningforNamedEntityRecognition/)
 
-##### [【关于 对抗训练】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/adversarial_training_study/)
+###### [【关于 对抗训练】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/trick/adversarial_training_study/)
 
-- [【关于 生成对抗网络 GAN 】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/DL_algorithm/adversarial_training_study/)
-- [【关于 FreeLB 】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/adversarial_training_study/FREELB/)
+- [【关于 生成对抗网络 GAN 】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/trick/adversarial_training_study/)
+- [【关于 FreeLB 】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/trick/adversarial_training_study/FREELB/)
   - 论文名称: FreeLB: Enhanced Adversarial Training for Language Understanding 加强语言理解的对抗性训练
   - 动机：对抗训练使保留标签的输入扰动的最大风险最小，对于提高语言模型的泛化能力是有效的。 
   - 方法：提出了一种新的对抗性训练算法—— freeb，它通过在字嵌入中添加对抗性的干扰，最小化输入样本周围不同区域内的对抗性风险，从而提高嵌入空间的鲁棒性和不变性。
 
-##### [【关于 GCN in NLP 】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/GNN/GCN2NLP/)
+###### [【关于 文本预处理】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/trick/NLP_tools/pre_study/samplingStudy/)
+- [【关于 过采样】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/trick/NLP_tools/pre_study/samplingStudy/samplingStudy)
+
+###### [【关于 半监督学习】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/trick/Unsupervised/)
+
+- [Unsupervised Data Augmentation (UDA)](https://github.com/km1994/nlp_paper_study/tree/master/trick/Unsupervised/UDA/)
+  - [【关于 UDA】 那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/trick/Unsupervised/UDA/)
+    - 阅读理由：UDA（Unsupervised Data Augmentation 无监督数据增强）是Google在2019年提出的半监督学习算法。该算法超越了所有现有的半监督学习方法，并实现了仅使用极少量标记样本即可达到使用大量标记样本训练集的精度。
+    - 动机： 深度学习的模型训练通常依赖大量的标签数据，在只有少量数据上通常表现不好;
+    - 思路：提出了一种基于无监督数据的数据增强方式UDA（Unsupervised Data Augmentation）。UDA方法生成无监督数据与原始无监督数据具备分布的一致性，而以前的方法通常只是应用高斯噪声和dropout噪声（无法保证一致性）。UDA方法利用了一种目前为止最优的方法生成更加“真实”的数据。
+    - 优点：使用这种数据增强方法，在极少量数据集上，六种语言任务和三种视觉任务都得到了明显的提升。
+- [【关于 “脏数据”处理】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/trick/Unsupervised/noisy_label_learning/)
+  - 一、动机
+    - 1.1 何为“脏数据”？
+    - 1.2 “脏数据” 会带来什么后果？
+  - 二、“脏数据” 处理篇
+    - 2.1 “脏数据” 怎么处理呢？
+    - 2.2 置信学习方法篇
+      - 2.2.1 什么是 置信学习方法？
+      - 2.2.2 置信学习方法 优点？
+      - 2.2.3 置信学习方法 怎么做？
+      - 2.2.4 置信学习方法 怎么用？有什么开源框架？
+      - 2.2.5 置信学习方法 的工作原理？
+
+###### [【关于 GCN in NLP 】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/trick/GNN/GCN2NLP/)
 - [【关于 GCN in NLP 】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/GNN/GCN2NLP/readme.md)
   - 构图方法：
     - 句法依赖树；
@@ -916,24 +1159,76 @@
     -  PMI;
     -  序列关系；
     -  词典
- 
-##### [【关于 文本预处理】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/NLP_tools/pre_study/samplingStudy/)
-- [【关于 过采样】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/NLP_tools/pre_study/samplingStudy/samplingStudy)
 
-##### [【关于问答系统】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/QA_study/) 
+##### [【关于 问答系统】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/QA_study/) 
+
+###### [【关于 FAQ 】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/QA_study/FAQ/)
 
 - [【关于 FAQ Trick】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/QA_study/FAQ/FAQ_trick/)
+  - 一、动机
+    - 1.1 问答系统的动机？
+    - 1.2 问答系统 是什么？
+  - 二、FAQ 检索式问答系统介绍篇
+    - 2.1 FAQ 检索式问答系统 是 什么？
+    - 2.2 query 匹配标准 QA 的核心是什么?
+  - 三、FAQ 检索式问答系统 方案篇
+    - 3.1 常用 方案有哪些？
+    - 3.2 为什么 QQ 匹配比较常用？
+      - 3.2.1 QQ 匹配的优点有哪些？
+      - 3.2.2 QQ 匹配的语义空间是什么？
+      - 3.2.3 QQ 匹配的语料的稳定性是什么？
+      - 3.2.4 QQ 匹配的业务回答与算法模型的解耦是什么？
+      - 3.2.5 QQ 匹配的新问题发现与去重是什么？
+      - 3.2.6 QQ 匹配的上线运行速度是什么？
+    - 3.3  QQ 匹配一般处理流程是怎么样？ 【假设 标准问题库 已处理好】
+  - 四、FAQ 标准问题库构建篇
+    - 4.1 如何发现 FAQ 中标准问题？
+    - 4.2 FAQ 如何做拆分？
+    - 4.3 FAQ 如何做合并？
+    - 4.4 FAQ 标准库如何实时更新？
+    - 4.5 FAQ 知识库搭建原则有哪些？
+    - 4.6 FAQ 知识库应该具备哪些特点？
+    - 4.7 FAQ 知识库应该怎么从零构建？
+    - 4.8 FAQ 标准问题库答案如何优化？
+    - 4.9 FAQ 怎样发现未能解决客户的问题？
+- [【关于 Robust Industry-scale Question Answering System】 那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/QA_study/FAQ/Industry-scaleQAS/)
+  - 论文：Towards building a Robust Industry-scale Question Answering System
+  -论文地址：https://www.aclweb.org/anthology/2020.coling-industry.9.pdf
+  - 会议：COLING 2020
+  - 工业规模的 NLP 系统需要两个功能。 
+    - 1. 鲁棒性：“零样本迁移学习”(ZSTL) 的性能值得称道； 
+    - 2. 效率：系统必须高效训练并即时响应。
+  - 论文方法：介绍了一种称为GAAMA（Go Ahead Ask Me Anything）的生产模型的发展，它具有上述两个特征：
+    - 为了稳健性，它在最近引入的Natural Questions（NQ）数据集上进行训练。 NQ 对 SQuAD 等旧数据集提出了额外的挑战：
+      - (a) QA 系统需要阅读和理解整篇 Wikipedia 文章而不是一小段文章；
+      - (b) NQ 在构建过程中不会受到观察偏差的影响，从而减少问题和问题之间的词汇重叠文章。 
+    - GAAMA 由Attention-over-Attention、注意力头的多样性、分层迁移学习和合成数据增强组成，同时计算成本低廉。
+  - 实验结果：
+    - 建立在强大的 BERTQA 模型之上，GAAMA 在 F1 中比 NQ 上的行业规模最先进 (SOTA) 系统提供了 2.0% 的绝对提升；
+    -  GAAMA 将零样本转移到了看不见的现实生活和重要领域，因为它在两个基准上产生了可观的性能：BioASQ 和新引入的 CovidQA 数据集。
+
+- [【关于 LCNQA】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/QA_study/LCNQA/)
+  - 论文名称：Lattice CNNs for Matching Based Chinese Question Answering
+- [LSTM-based Deep Learning Models for Non-factoid Answer Selection](https://github.com/km1994/nlp_paper_study/tree/master/QA_study/FAQ/T1_LSTM-based_for_Non-factoid_Answer_Selection/)
+- [【关于 Denoising Distantly Supervised ODQA】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/QA_study/FAQ/T4_DenoisingDistantlySupervisedODQA/)
+  - 论文名称：Denoising Distantly Supervised Open-Domain Question Answering
+- [FAQ retrieval using query-question similarity and BERT-based query-answer relevance](https://github.com/km1994/nlp_paper_study/tree/master/QA_study/FAQ/ACM2019_faq_bert-based_query-answer_relevance/)
+- [【DC-BERT】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/QA_study/FAQ/SIGIR2020_DCBert/)
+  - 论文名称：DC-BERT : DECOUPLING QUESTION AND DOCUMENT FOR EFFICIENT CONTEXTUAL ENCODING
+  - 会议：SIGIR2020
+  - 常用方法：
+    - 遵循“检索和读取”管道，并使用基于BERT的重新排序器对检索到的文档进行筛选，
+    - 然后再将其馈送到阅读器模块中。
+    - BERT检索器将问题和每个检索到的文档的连接作为输入。
+  - 问题：
+    - 无法处理传入问题的高吞吐量，每个问题都有大量检索到的文档；
+  - 论文方法：具有双重BERT模型的解耦上下文编码框架：
+    - 一个在线BERT，仅对问题进行一次编码；
+    - 一个正式的BERT，对所有文档进行预编码并缓存其编码；
+
+###### [【关于 多轮检索 】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/QA_study/mulFAQ/)
+
 - [【关于 文本匹配和多轮检索】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/QA_study/文本匹配和多轮检索.xmind)
-- [【关于 FAQ】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/QA_study/FAQ/)
-  - [【关于 LCNQA】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/QA_study/LCNQA/)
-    - 论文名称：Lattice CNNs for Matching Based Chinese Question Answering
-  - [LSTM-based Deep Learning Models for Non-factoid Answer Selection](https://github.com/km1994/nlp_paper_study/tree/master/QA_study/T1_LSTM-based_for_Non-factoid_Answer_Selection/)
-  - [【关于 Denoising Distantly Supervised ODQA】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/QA_study/T4_DenoisingDistantlySupervisedODQA/)
-    - 论文名称：Denoising Distantly Supervised Open-Domain Question Answering
-  - [FAQ retrieval using query-question similarity and BERT-based query-answer relevance](https://github.com/km1994/nlp_paper_study/tree/master/QA_study/ACM2019_faq_bert-based_query-answer_relevance/)
-  - [【DC-BERT】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/QA_study/SIGIR2020_DCBert/)
-    - 论文名称：DC-BERT : DECOUPLING QUESTION AND DOCUMENT FOR EFFICIENT CONTEXTUAL ENCODING
-- [【关于 KBFAQ】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/QA_study/KBFAQ/)
 - [【关于 MulFAQ】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/QA_study/mulFAQ/)
   - [【关于 MSN】 那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/QA_study/mulFAQ/MSN_mulQA/)
     - 论文名称：Multi-hop Selector Network for Multi-turn Response Selection in Retrieval-based chatbots
@@ -946,6 +1241,88 @@
       - s1 ：采用 多跳选择器从 上下文集 中 选取最相关的上下文 utterances，并生成 k 个 不同的上下文；
       - s2 : 融合 k 个 上下文 utterance ，并与候选回复做匹配；
       - s3 : 匹配截取，采用 CNN 提取匹配特征，并 用 GRU 学习 utterance 间的临时关系；
+
+###### [【关于 KBFAQ 】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/QA_study/KBFAQ/)
+
+- [【关于 KBFAQ】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/QA_study/KBFAQ/)
+
+##### [【关于 对话系统】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/QA_study/dialogue_system_study/)
+
+###### [【关于 自然语言理解 NLU】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/QA_study/dialogue_system_study/NLU/contextLU/)
+
+- [【关于 上下文理解 contextLU】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/QA_study/dialogue_system_study/NLU/contextLU/)
+- [【关于 DIET】 那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/QA_study/dialogue_system_study/NLU/DIET/)
+  - 论文名称：DIET：Dual Intent and Entity Transformer
+  - 作者：RASA
+  - 论文代码：https://github.com/cheesama/DIET-pytorch 【韩文】
+  - 动机：
+    - 大规模的预训练语言模型在 GLUE 和 SuperGLUE 等语言理解基准上显示出令人印象深刻的结果，与分布式表示 (GloVe) 和纯监督方法等其他预训练方法相比有了显着改善。
+  - 论文方法：我们介绍了 the Dual Intent and Entity Transformer (DIET) (DIET) 架构（基于两个任务共享的Transformer）：
+    - 1 实体标签序列通过Transformer后，输出序列进入顶层条件随机场（CRF）标记层预测，输出每个Token成为BIOE的概率；
+    - 2 完整话语和意图标签经过Transformer输出到单个语义向量空间中；
+    - 3 利用点积损失最大化与目标标签的相似度，最小化与负样本的相似度。
+  - 优点：
+    - 它是一种模块化体系结构，适合典型的软件开发工作流程；
+    - 在准确性和性能方面，能达到大规模预训练语言模型的效果；
+    - 改进了现有技术，胜过当时的SOTA，并且训练速度提高了6倍。
+- [【关于 Domain/Intent Classification 】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/QA_study/dialogue_system_study/NLU/IntentClassification/)
+- [【关于 槽位填充 (Slot Filling)】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/QA_study/dialogue_system_study/NLU/SlotFilling/)
+
+###### [【关于 状态追踪（DST）】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/QA_study/dialogue_system_study/DST/)
+
+- [【关于 状态追踪（DST）】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/QA_study/dialogue_system_study/DST/)
+
+###### [【关于 自然语言生成NLG 】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/QA_study/dialogue_system_study/NLG/)
+- [【关于 自然语言生成NLG 】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/QA_study/dialogue_system_study/NLG/)
+- [【关于 IRN 】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/QA_study/dialogue_system_study/NLG/IRN/)
+  - 论文：ScriptWriter: Narrative-Guided Script Generation
+  - 发表会议：ACL2020
+  - 论文地址：https://www.aclweb.org/anthology/2020.acl-main.10/
+  - github：#
+  - 论文动机：如何将输入中对话状态的slot-value对正确的在response生成
+  - 论文方法：
+    - 迭代网络：来不断修正生成过程不对的slot-value；
+    - 强化学习：不断更新，实验证明我们的网络生成的回复中中slot关键信息生成的正确性大大提高。
+  - 实验结果：对多个基准数据集进行了综合研究，结果表明所提出的方法显著降低了所有强基线的时隙错误率。人类的评估也证实了它的有效性。
+
+###### [【关于 E2E 】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/QA_study/dialogue_system_study/E2E/)
+
+- [【关于 TC_Bot(End-to-End Task-Completion Neural Dialogue Systems) 】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/QA_study/dialogue_system_study/E2E/TC_Bot/)
+- [【关于 DF-Net 】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/QA_study/dialogue_system_study/E2E/DynamicFusionNetwork/)
+  - 论文：Dynamic Fusion Network for Multi-Domain End-to-end Task-Oriented Dialog
+  - 发表会议：ACL2020
+  - 论文地址：https://arxiv.org/abs/2004.11019
+  - github：https://github.com/LooperXX/DF-Netmd
+  - 论文动机：
+    1. 依赖大量标准数据：端到端的模型依赖于大量的标注数据，这就导致了模型在一个新拓展的领域上很难利用。
+    2. 对于一个新的领域，总是很难收集足够多的数据。这就使得将知识从具有充足标注数据的源领域迁移到一个只有少量标注数据的新领域成为非常重要的问题。
+  - 前沿工作总结
+    - 第一类：简单地结合多领域的数据集进行训练，如图 (a)
+      - 优点：隐含地提取共享的特征
+      - 缺点：很难有效捕捉领域特有的知识
+    - 第二类是在各个领域单独地训练模型，如图 (b)
+      - 优点：能够很好地捕捉领域特有的知识；
+      - 缺点：却忽视了不同领域间共有的知识。
+    - 第三类：通过建模不同领域间知识的连接来解决已有方法的局限。已有的一个简单的baseline如图 (c)，将领域共享的和领域私有的特征合并在一个共享-私有 (shared-private) 架构中。
+      - 优点：区分了共享以及私有的知识
+      - 缺点：
+        - 一是面对一个几乎不具备数据的新领域时，私有模块无法有效提取对应的领域知识；
+        - 二是这个架构忽略了一些领域子集间细粒度的想关性（比如和天气领域相比，导航领域和规划领域更相关）。
+  - 思路：
+  1. shared-private 架构：学习共享的知识以及对应的领域特有特征；
+  2. 动态融合网络：动态地利用所有领域间的相关性提供给下一步细粒度知识迁移；
+  3. 对抗训练 (adversarial training) ：促使共享模块生成领域共享特征
+
+###### [【关于 Rasa 】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/QA_study/dialogue_system_study/rasa/)
+
+1. [【关于 rasa 安装 】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/QA_study/dialogue_system_study/rasa/rasa安装手册.md)
+2. [【关于 rasa 基本架构 】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/QA_study/dialogue_system_study/rasa/rasa基本框架_视频讲解.md)
+3. [【关于 rasa中文对话系统】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/QA_study/dialogue_system_study/rasa/rasa中文对话系统.md)
+4. [【关于 rasa中文对话系统构建】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/QA_study/dialogue_system_study/rasa/rasa中文对话系统构建.md)
+5. [【关于 rasa->NLU 】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/QA_study/dialogue_system_study/rasa/rasa系列/rasa_nlu.md)
+6. [【关于 rasa -> Core -> FormAction 】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/QA_study/dialogue_system_study/rasa/rasa_core_FormAction/rasa_nlu.md)
+7. [【关于 rasa -> Core -> Stories 】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/QA_study/dialogue_system_study/rasa/rasa系列/rasa_core_Stories.md)
+8. [【关于 rasa -> Core -> Action 】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/QA_study/dialogue_system_study/rasa/rasa_core_FormAction/rasa_core_Action.md)
 
 ##### [【关于 文本摘要】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/summarization_study/) 
 
@@ -1000,7 +1377,7 @@
 
 ##### [【关于 文本匹配】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/text_match_study/) 
 
-- [【关于 /SimCSE】 那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/text_match_study/SimCSE/) **【推荐阅读】**
+- [【关于 SimCSE】 那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/text_match_study/SimCSE/) **【推荐阅读】**
   - 论文：SimCSE: Simple Contrastive Learning of Sentence Embeddings
   - 会议：
   - 论文地址：https://arxiv.org/abs/2104.08821
@@ -1109,9 +1486,6 @@
    - 动机：未存在将主题模型和BERT结合的方法。 语义相似度检测是自然语言的一项基本任务理解。添加主题信息对于以前的特征工程语义相似性模型和神经网络模型都是有用的其他任务。在那里目前还没有标准的方法将主题与预先训练的内容表示结合起来比如 BERT。
    - 方法：我们提出了一种新颖的基于主题的基于BERT的语义相似度检测体系结构，并证明了我们的模型在不同的英语语言数据集上的性能优于强神经基线。我们发现在BERT中添加主题特别有助于解决特定领域的情况。
 
-
-
-
 ##### [【关于 机器翻译】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/MachineTranslation/)
 
 - [Neural Machine Translation of Rare Words with Subword Units 论文学习](https://github.com/km1994/nlp_paper_study/tree/master/MachineTranslation/NeuralMachineTranslationOfRareWordsWithSubwordUnits/)
@@ -1135,86 +1509,6 @@
      2. （2）情节-回复匹配，其能够反映回复是否与情节相符；
      3. （3）上文-情节匹配，其能够隐式反映哪些情节已经被上文表达。
   4. 最后，这些匹配特征经过CNN的进一步抽取和聚集，再经过MLP得到最终的匹配得分。
-
-##### [【关于 对话系统】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/DialogueSystem_study/)
-
-- [【关于 Domain/Intent Classification 】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/DialogueSystem_study/IntentClassification/)
-- [【关于 槽位填充 (Slot Filling)】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/DialogueSystem_study/SlotFilling/)
-- [【关于 上下文LU】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/DialogueSystem_study/contextLU/)
-- [【关于 DSTC 】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/DialogueSystem_study/DSTC/)
-
-###### [【关于 自然语言生成NLG 】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/DialogueSystem_study/NLG/)
-- [【关于 自然语言生成NLG 】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/DialogueSystem_study/NLG/)
-- [【关于 IRN 】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/DialogueSystem_study/NLG/IRN/)
-  - 论文：ScriptWriter: Narrative-Guided Script Generation
-  - 发表会议：ACL2020
-  - 论文地址：https://www.aclweb.org/anthology/2020.acl-main.10/
-  - github：#
-  - 论文动机：如何将输入中对话状态的slot-value对正确的在response生成
-  - 论文方法：
-    - 迭代网络：来不断修正生成过程不对的slot-value；
-    - 强化学习：不断更新，实验证明我们的网络生成的回复中中slot关键信息生成的正确性大大提高。
-  - 实验结果：对多个基准数据集进行了综合研究，结果表明所提出的方法显著降低了所有强基线的时隙错误率。人类的评估也证实了它的有效性。
-
-###### [【关于 E2E 】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/DialogueSystem_study/E2E/)
-
-- [【关于 TC_Bot(End-to-End Task-Completion Neural Dialogue Systems) 】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/DialogueSystem_study/E2E/TC_Bot/)
-- [【关于 DF-Net 】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/DialogueSystem_study/E2E/DynamicFusionNetwork/)
-  - 论文：Dynamic Fusion Network for Multi-Domain End-to-end Task-Oriented Dialog
-  - 发表会议：ACL2020
-  - 论文地址：https://arxiv.org/abs/2004.11019
-  - github：https://github.com/LooperXX/DF-Netmd
-  - 论文动机：
-    1. 依赖大量标准数据：端到端的模型依赖于大量的标注数据，这就导致了模型在一个新拓展的领域上很难利用。
-    2. 对于一个新的领域，总是很难收集足够多的数据。这就使得将知识从具有充足标注数据的源领域迁移到一个只有少量标注数据的新领域成为非常重要的问题。
-  - 前沿工作总结
-    - 第一类：简单地结合多领域的数据集进行训练，如图 (a)
-      - 优点：隐含地提取共享的特征
-      - 缺点：很难有效捕捉领域特有的知识
-    - 第二类是在各个领域单独地训练模型，如图 (b)
-      - 优点：能够很好地捕捉领域特有的知识；
-      - 缺点：却忽视了不同领域间共有的知识。
-    - 第三类：通过建模不同领域间知识的连接来解决已有方法的局限。已有的一个简单的baseline如图 (c)，将领域共享的和领域私有的特征合并在一个共享-私有 (shared-private) 架构中。
-      - 优点：区分了共享以及私有的知识
-      - 缺点：
-        - 一是面对一个几乎不具备数据的新领域时，私有模块无法有效提取对应的领域知识；
-        - 二是这个架构忽略了一些领域子集间细粒度的想关性（比如和天气领域相比，导航领域和规划领域更相关）。
-  - 思路：
-  1. shared-private 架构：学习共享的知识以及对应的领域特有特征；
-  2. 动态融合网络：动态地利用所有领域间的相关性提供给下一步细粒度知识迁移；
-  3. 对抗训练 (adversarial training) ：促使共享模块生成领域共享特征
-
-##### [【关于 Rasa 】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/DialogueSystem_study/rasa/)
-
-1. [【关于 rasa 安装 】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/DialogueSystem_study/rasa/rasa安装手册.md)
-2. [【关于 rasa 基本架构 】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/DialogueSystem_study/rasa/rasa基本框架_视频讲解.md)
-3. [【关于 rasa中文对话系统】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/DialogueSystem_study/rasa/rasa中文对话系统.md)
-4. [【关于 rasa中文对话系统构建】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/DialogueSystem_study/rasa/rasa中文对话系统构建.md)
-5. [【关于 rasa->NLU 】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/DialogueSystem_study/rasa/rasa系列/rasa_nlu.md)
-6. [【关于 rasa -> Core -> FormAction 】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/DialogueSystem_study/rasa/rasa_core_FormAction/rasa_nlu.md)
-7. [【关于 rasa -> Core -> Stories 】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/DialogueSystem_study/rasa/rasa系列/rasa_core_Stories.md)
-8. [【关于 rasa -> Core -> Action 】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/DialogueSystem_study/rasa/rasa_core_FormAction/rasa_core_Action.md)
-
-##### [【关于 半监督学习】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/Unsupervised/)
-
-- [Unsupervised Data Augmentation (UDA)](https://github.com/km1994/nlp_paper_study/tree/master/Unsupervised/UDA/)
-  - [【关于 UDA】 那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/Unsupervised/UDA/)
-    - 阅读理由：UDA（Unsupervised Data Augmentation 无监督数据增强）是Google在2019年提出的半监督学习算法。该算法超越了所有现有的半监督学习方法，并实现了仅使用极少量标记样本即可达到使用大量标记样本训练集的精度。
-    - 动机： 深度学习的模型训练通常依赖大量的标签数据，在只有少量数据上通常表现不好;
-    - 思路：提出了一种基于无监督数据的数据增强方式UDA（Unsupervised Data Augmentation）。UDA方法生成无监督数据与原始无监督数据具备分布的一致性，而以前的方法通常只是应用高斯噪声和dropout噪声（无法保证一致性）。UDA方法利用了一种目前为止最优的方法生成更加“真实”的数据。
-    - 优点：使用这种数据增强方法，在极少量数据集上，六种语言任务和三种视觉任务都得到了明显的提升。
-- [【关于 “脏数据”处理】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/Unsupervised/noisy_label_learning/)
-  -  一、动机
-     - 1.1 何为“脏数据”？
-     - 1.2 “脏数据” 会带来什么后果？
-   - 二、“脏数据” 处理篇
-     - 2.1 “脏数据” 怎么处理呢？
-     - 2.2 置信学习方法篇
-       - 2.2.1 什么是 置信学习方法？
-       - 2.2.2 置信学习方法 优点？
-       - 2.2.3 置信学习方法 怎么做？
-       - 2.2.4 置信学习方法 怎么用？有什么开源框架？
-       - 2.2.5 置信学习方法 的工作原理？
 
 ##### [【关于 NLP分类任务】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/classifier_study/)
 
@@ -1284,6 +1578,15 @@
   - 论文地址：chrome-extension://ikhdkkncnoglghljlkmcimlnlhkeamad/pdf-viewer/web/viewer.html?file=https%3A%2F%2Faclanthology.org%2F2021.eacl-main.20.pdf#=&zoom=125
   - 论文源码地址：https://github.com/timoschick/pet
 
+###### [【关于 细粒度情感分析】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/classifier_study/ABSC_study/)
+
+- [【关于 LCF】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/classifier_study/ABSC_study/LCF/)
+  - 论文名称：A Local Context Focus Mechanism for Aspect-Based Sentiment Classiﬁcation
+  - 论文动机：没有考虑情感极性和局部上下文间关系
+    - LCF:利用自注意力机制同时捕获局部上下文特征和全局上下文特征，以推断 targeted aspect 的情感极性
+    - SRD:评估上下文词与 aspect 间的独立性，SRD对于弄清局部上下文具有重要意义，并且SRD阈值中的上下文单词的特征将得到保留和重点关注。
+    - CDM 和 CDW 层：强化 LCF，使其对 特殊 aspest 的局部上下文提供 更多 注意力。CDM层通过掩盖语义相对较少的上下文词的输出表示，将重点放在局部上下文上。 CDW 层根据 SRD 削弱语义相对较少的上下文词的特征；
+
 ##### [【关于 中文分词】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/chinese_word_segmentation/)
 
 - [【关于 中文分词】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/chinese_word_segmentation/)
@@ -1319,50 +1622,6 @@
       - 动机：为了降低噪声数据的影响，更好地利用源域数据，
       - 方法：在源域数据集和通过Distant annotation构造的目标领域数据集上联合进行Adversarial training的方法。
       - 优点：Adversarial training模块可以捕获特定领域更深入的特性，和不可知领域的特性。
-
-##### [【关于 关键词提取】 那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/keyword_ex_study/)
-
-- [【关于 关键词提取】 那些你不知道的事](keyword_ex_study/)
-  - 一、TF-IDF关键词提取算法
-    - 1.1 理论基础
-    - 1.2 计算公式
-      - 1.2.1 词频 （Term Frequency，TF）
-      - 1.2.2 逆文本频率(Inverse Document Frequency，IDF)
-      - 1.2.3 TF-IDF
-    - 1.3 应用
-    - 1.4 实战篇
-      - 1.4.1 TF-IDF算法 手撸版
-      - 1.4.2 TF-IDF算法 Sklearn 版
-      - 1.4.3 TF-IDF算法 jieba 版
-  - 二、PageRank算法【1】
-    - 2.1 理论学习
-  - 三、TextRank算法【2】
-    - 3.1 理论学习
-    - 3.2 实战篇
-      - 3.2.1 基于Textrank4zh的TextRank算法版
-      - 3.2.2 基于jieba的TextRank算法实现
-      - 3.2.3 基于SnowNLP的TextRank算法实现
-- [【关于 KeyBERT 】 那些你不知道的事](keyword_ex_study/KeyBert/)
-  - 论文：Sharma, P., & Li, Y. (2019). Self-Supervised Contextual Keyword and Keyphrase Retrieval with Self-Labelling.
-  - 论文地址：https://www.preprints.org/manuscript/201908.0073/download/final_file
-  - 论文代码：https://github.com/MaartenGr/KeyBERT
-  - 一、摘要
-  - 二、动机
-  - 三、论文方法
-  - 四、实践
-    - 4.1 安装
-    - 4.2 KeyBERT 调用
-    - 4.3 语料预处理
-    - 4.4 利用 KeyBert 进行关键词提取
-- [【关于 One2Set 】 那些你不知道的事](keyword_ex_study/kg_one2set/)
-  - 论文名称：One2Set: Generating Diverse Keyphrases as a Set
-  - 论文：https://aclanthology.org/2021.acl-long.354/
-  - 代码：https://github.com/jiacheng-ye/kg_one2set
-  - 会议：ACL2021
-
-##### [【关于 新词发现】 那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/word_discovery/)
-
-- [【关于 新词发现】 那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/word_discovery/)
 
 ##### [【关于 搜索引擎】 那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/search_engine/)
 
@@ -1413,6 +1672,42 @@
     - [2. 更语义搜索](#2-更语义搜索)
     - [3。 多轮搜索](#3-多轮搜索)
 
+- [【关于 GECToR】 那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/search_engine/PLMbasedRankingInBaiduSearch/)
+  - 论文：Pre-trained Language Model based Ranking in Baidu Search
+  - 论文地址：https://arxiv.org/abs/2105.11108
+  - 论文出处：KDD'21
+  - 动机：
+    - 作为搜索引擎的核心， Ranking System 在满足用户的信息需求方面起着至关重要的作用；
+    - 基于 PLM 的 Neural Rankers 难以直接应用：
+      - （1）推理时延高：大规模神经 PLM 的计算成本过高，尤其是对于网络文档中的长文本，禁止将它们部署在需要极低延迟的 Online Ranking System 中；
+      - (2) 目标不一致问题：基于 PLM 的训练目标 与 临时检索场景目标 存在不一致问题；
+      - (3) 兼容性问题：搜索引擎通常涉及 committee of ranking components，如何 让 Fine-tuning PLM 得到的 Ranking System 与其 兼容，存在问题；
+  - 论文方法：在线搜索引擎系统中部署最先进的中文预训练语言模型（即 ERNIE）时，贡献了一系列成功应用的技术来解决这些暴露的问题。
+    - 首先，阐述了一种新颖的做法，以经济高效地汇总 Web 文档，并使用廉价但功能强大的 Pyramid-ERNIE 架构将结果汇总内容与查询联系起来。
+    - 然后，赋予了一种创新范式来精细地利用大规模嘈杂和有偏见的点击后行为数据进行面向相关的预训练。
+    - 提出了一种 针对 在线排名系统 的 human-anchored 微调策略 ，旨在稳定各种在线组件的排名信号。
+  - 实验结果：大量的离线和在线实验结果表明，所提出的技术显着提高了搜索引擎的性能。
+
+- [【关于 PLM for Web-scale Retrieval in Baidu Search 】 那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/search_engine/PLMforWeb-scaleRetrievalInBaiduSearch/)
+  - 论文：Pre-trained Language Model for Web-scale Retrieval in Baidu Search 
+  - 论文地址：https://arxiv.org/abs/2106.03373
+  - 论文出处：KDD'21
+  - 介绍： Retrieval 是网络搜索中的一个关键阶段，它从十亿规模的语料库中识别出一个与查询相关的候选集。在 retrieval 阶段发现更多语义相关的候选集 有助于 向最终用户展示更多高质量的结果。
+  - 动机：
+    - 【语义匹配】：**如何 解决 用户 query 多样化和口语化问题？**
+    - 【冷启动问题】：**对于 大多数 第一次出现的 query 和 doc，如何让 Retrieval Models 捕获 其对应语义信息？**
+    - 【工程实践】：**如何 将 Retrieval Models 应用于 Baidu Search？**
+  - 论文方法：论文描述了作者在 Baidu Search 中开发和部署的 Retrieval Models 。
+    - 该系统利用了最近最先进的中文预训练语言模型，即通过知识整合 (ERNIE) 的增强表示，它促进了系统的表达语义匹配。
+    - 基于 ERNIE 的 Retrieval Models 拥有：
+      - 1）expressive Transformer-based semantic encoders：能够 帮助 Retrieval 充分捕获 query 和 doc 对应语义信息；
+      - 2）多阶段训练范式：ERNIE 预训练模型 分别采用 不同的语料数据 进行 多阶段训练，提高模型 泛化能力；
+    - 系统工作流程：基于 ERNIE 的 Retrieval Models 结合 传统 Retrieval Models 和 Deep Retrieval Models，并 采用  lightweight post-retrieval filtering module 引入更多的统计特征（例如，点击率、停留时间），来对上述 Retrieval Models 的 检索结果 进行 统一过滤，；
+    - 最终，该系统完全部署到生产环境中，并进行了严格的离线和在线实验。
+  - 实验结果：
+    - 该系统可以执行高质量的候选 retrieval ，特别是对于那些需求不常见的尾部查询。
+    - 由预训练语言模型（即 ERNIE）推动的新 retrieval system 可以在很大程度上提高我们搜索引擎的可用性和适用性。
+
 ##### [【关于 文本纠错】 那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/text_corrector/)
 
 - [【关于 GECToR】 那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/text_corrector/GECToR/)
@@ -1446,8 +1741,16 @@
     - [SyntaxSQLNet 模型](https://github.com/km1994/nlp_paper_study/tree/master/text2sql_study/readme.md#syntaxsqlnet-模型)
     - [IRNet 模型](https://github.com/km1994/nlp_paper_study/tree/master/text2sql_study/readme.md#irnet-模型)
     - [Global-GNN && RAT-SQL](https://github.com/km1994/nlp_paper_study/tree/master/text2sql_study/readme.md#global-gnn--rat-sql)
-
-
+- [【关于 LGESQL 】 那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/text2sql_study/LGESQL/readme.md)
+  - 论文：LGESQL: Line Graph Enhanced Text-to-SQL Model with Mixed Local and Non-Local Relations
+  - 来源：ACL2021
+  - 链接：https://arxiv.org/abs/2106.01093
+  - Github地址：https://github.com/rhythmcao/text2sql-lgesql
+  - 动机：这项工作旨在解决 text-to-SQL 任务中具有挑战性的异构图编码问题。以前的方法通常以节点为中心，仅利用不同的权重矩阵来参数化边类型 
+    - 1) 忽略了边的拓扑结构中嵌入的丰富语义 
+    - 2) 无法区分每个节点的局部和非局部关系。
+  - 论文方法：提出了一种 Line Graph Enhanced Text-to-SQL (LGESQL) 模型来挖掘底层关系特征，而无需构建元路径。凭借线图，消息不仅通过节点之间的连接，而且通过有向边的拓扑更有效地传播。此外，在图迭代期间，局部和非局部关系都被独特地整合在一起。我们还设计了一个称为图修剪的辅助任务，以提高编码器的判别能力。
+  - 论文实验：在撰写本文时，我们的框架在跨域文本到 SQL 基准 Spider 上取得了最先进的结果（Glove 为 62.8%，Electra 为 72.0%）。
 
 #### 实战篇
 
@@ -1515,98 +1818,97 @@
 
 ### Elastrsearch 学习篇
 
-- [Elastrsearch 学习](es_study/)
-  - [ElasticSearch架构解析与最佳实践.md](es_study/ElasticSearch架构解析与最佳实践.md)
+- [Elastrsearch 学习](https://github.com/km1994/nlp_paper_study/tree/master/trick/NLP_tools/es_study/)
+  - [ElasticSearch架构解析与最佳实践.md]([es_study/](https://github.com/km1994/nlp_paper_study/tree/master/trick/NLP_tools/es_study/)ElasticSearch架构解析与最佳实践.md)
   
 ### 竞赛篇
 
-#### [【关于 NLP比赛】 那些你不知道的事](nlp_game/) 
+#### [【关于 NLP比赛】 那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/nlp_game/) 【点击查看详情】
 
-- [一、问答匹配任务](#一问答匹配任务)
-  - [5. 新冠疫情相似句对判定大赛 【比赛地址】](#5-新冠疫情相似句对判定大赛-比赛地址)
-    - [5.1 赛题背景](#51-赛题背景)
-    - [5.2 数据集介绍](#52-数据集介绍)
-    - [5.3 比赛方案收集](#53-比赛方案收集)
-  - [4. 2021搜狐校园文本匹配算法大赛 【比赛地址】](#4-2021搜狐校园文本匹配算法大赛-比赛地址)
-    - [4.1 赛题背景](#41-赛题背景)
-    - [4.2 比赛任务](#42-比赛任务)
-    - [4.3 数据说明 【地址】](#43-数据说明-地址)
-    - [4.4 比赛方案收集](#44-比赛方案收集)
-  - [3. CCF2020问答匹配比赛](#3-ccf2020问答匹配比赛)
-    - [3.1 比赛背景](#31-比赛背景)
-    - [3.2 比赛方案收集](#32-比赛方案收集)
-  - [2. 智能客服问题相似度算法设计——第三届魔镜杯大赛](#2-智能客服问题相似度算法设计第三届魔镜杯大赛)
-  - [1. 2018CIKM AnalytiCup – 阿里小蜜机器人跨语言短文本匹配算法竞赛](#1-2018cikm-analyticup--阿里小蜜机器人跨语言短文本匹配算法竞赛)
-  - [其他](#其他)
-- [二、对话](#二对话)
-  - [1. 2020 CCF BDCI《千言：多技能对话》](#1-2020-ccf-bdci千言多技能对话)
-    - [1.1 赛题简介](#11-赛题简介)
-    - [1.2 比赛方案收集](#12-比赛方案收集)
-  - [2. 2018JD Dialog Challenge 任务导向型对话系统挑战赛](#2-2018jd-dialog-challenge-任务导向型对话系统挑战赛)
-- [三、文本分类](#三文本分类)
-  - [1. 2018 DC达观-文本智能处理挑战](#1-2018-dc达观-文本智能处理挑战)
-  - [2. 路透社新闻数据集“深度”探索性分析(词向量/情感分析)](#2-路透社新闻数据集深度探索性分析词向量情感分析)
-  - [3. 知乎看山杯](#3-知乎看山杯)
-  - [4. 2018 CCL 客服领域用户意图分类评测](#4-2018-ccl-客服领域用户意图分类评测)
-  - [5. 2018 kaggle quora insincere questions classification](#5-2018-kaggle-quora-insincere-questions-classification)
-- [四、 关键词提取](#四-关键词提取)
-  - [1. “神策杯”2018高校算法大师赛(关键词提取)](#1-神策杯2018高校算法大师赛关键词提取)
-- [五、内容识别](#五内容识别)
-  - [1. 第二届搜狐内容识别大赛](#1-第二届搜狐内容识别大赛)
-- [六、观点主题](#六观点主题)
-  - [1. 汽车行业用户观点主题及情感识别](#1-汽车行业用户观点主题及情感识别)
-- [七、实体链指](#七实体链指)
-  - [7.1. CCKS&2019中文短文本的实体链指](#71-ccks2019中文短文本的实体链指)
-  - [7.2. CCKS 2020实体链指比赛](#72-ccks-2020实体链指比赛)
-- [八、命名实体识别](#八命名实体识别)
-  - [8.1 天池中药说明书实体识别](#81-天池中药说明书实体识别)
-    - [8.1.1 任务描述](#811-任务描述)
-    - [8.1.2 比赛方案](#812-比赛方案)
-  - [8.2 CCF BDCI 中文命名实体识别算法鲁棒性评测](#82-ccf-bdci-中文命名实体识别算法鲁棒性评测)
-    - [8.2.1 任务描述](#821-任务描述)
-- [九、事件抽取](#九事件抽取)
-  - [9.1 CCKS 2020：面向金融领域的小样本跨类迁移事件抽取](#91-ccks-2020面向金融领域的小样本跨类迁移事件抽取)
-    - [9.1.1 任务描述](#911-任务描述)
-    - [9.1.2 比赛方案](#912-比赛方案)
-  - [9.2 CCKS2019_EventEntityExtraction](#92-ccks2019_evententityextraction)
-    - [9.1.1 任务描述](#911-任务描述-1)
-    - [9.1.2 比赛方案](#912-比赛方案-1)
-  - [9.3 2020 科大讯飞事件抽取挑战赛](#93-2020-科大讯飞事件抽取挑战赛)
-    - [9.3.1 任务描述](#931-任务描述)
-    - [9.3.2 比赛方案](#932-比赛方案)
-- [十、阅读理解](#十阅读理解)
-  - [10.1 2021海华AI挑战赛·中文阅读理解·技术组](#101-2021海华ai挑战赛中文阅读理解技术组)
-    - [10.1.1 赛题背景](#1011-赛题背景)
-    - [10.1.2 比赛任务](#1012-比赛任务)
-    - [10.1.3 比赛方案](#1013-比赛方案)
-- [十一、关系抽取](#十一关系抽取)
-  - [11.1 2020语言与智能技术竞赛：关系抽取任务 【比赛链接】](#111-2020语言与智能技术竞赛关系抽取任务-比赛链接)
-    - [11.1.1 赛题背景](#1111-赛题背景)
-    - [11.1.2 赛题说明](#1112-赛题说明)
-    - [11.1.3 数据集介绍](#1113-数据集介绍)
-    - [11.1.4 比赛方案](#1114-比赛方案)
-- [十二、中文文本纠错](#十二中文文本纠错)
-  - [12.1 专业赛：自然语言处理技术创新大赛——中文文本纠错比赛](#121-专业赛自然语言处理技术创新大赛中文文本纠错比赛)
-    - [12.1.1 竞赛背景](#1211-竞赛背景)
-    - [12.1.2 赛题描述](#1212-赛题描述)
-    - [12.1.3 模型训练](#1213-模型训练)
-    - [12.1.4 训练集数据介绍](#1214-训练集数据介绍)
-    - [12.1.5 比赛方案](#1215-比赛方案)
-- [十三、智能人机交互自然语言理解](#十三智能人机交互自然语言理解)
-  - [13.1 CCF BDCI 智能人机交互自然语言理解](#131-ccf-bdci-智能人机交互自然语言理解)
-    - [13.1.1 竞赛背景](#1311-竞赛背景)
-    - [13.1.2 数据集介绍](#1312-数据集介绍)
-- [十四、智能人机交互自然语言理解](#十四智能人机交互自然语言理解)
-  - [14.1 CCF BDCI 预训练模型知识量度量](#141-ccf-bdci-预训练模型知识量度量)
-    - [14.1.1 竞赛背景](#1411-竞赛背景)
-    - [14.1.2 数据集介绍](#1412-数据集介绍)
-- [参考资料](#参考资料)
+- 一、问答匹配任务
+- 5. 新冠疫情相似句对判定大赛 【比赛地址】
+    - 5.1 赛题背景
+    - 5.2 数据集介绍
+    - 5.3 比赛方案收集
+- 4. 2021搜狐校园文本匹配算法大赛 【比赛地址】
+    - 4.1 赛题背景
+    - 4.2 比赛任务
+    - 4.3 数据说明 【地址】
+    - 4.4 比赛方案收集
+- 3. CCF2020问答匹配比赛
+    - 3.1 比赛背景
+    - 3.2 比赛方案收集
+- 2. 智能客服问题相似度算法设计——第三届魔镜杯大赛
+- 1. 2018CIKM AnalytiCup – 阿里小蜜机器人跨语言短文本匹配算法竞赛
+- 其他
+- 二、对话
+- 1. 2020 CCF BDCI《千言：多技能对话》
+    - 1.1 赛题简介
+    - 1.2 比赛方案收集
+- 2. 2018JD Dialog Challenge 任务导向型对话系统挑战赛
+- 三、文本分类
+- 1. 2018 DC达观-文本智能处理挑战
+- 2. 路透社新闻数据集“深度”探索性分析(词向量/情感分析)
+- 3. 知乎看山杯
+- 4. 2018 CCL 客服领域用户意图分类评测
+- 5. 2018 kaggle quora insincere questions classification
+- 四、 关键词提取
+- 1. “神策杯”2018高校算法大师赛(关键词提取)
+- 五、内容识别
+- 1. 第二届搜狐内容识别大赛
+- 六、观点主题
+- 1. 汽车行业用户观点主题及情感识别
+- 七、实体链指
+- 7.1. CCKS&2019中文短文本的实体链指
+- 7.2. CCKS 2020实体链指比赛
+- 八、命名实体识别
+- 8.1 天池中药说明书实体识别
+    - 8.1.1 任务描述
+    - 8.1.2 比赛方案
+- 8.2 CCF BDCI 中文命名实体识别算法鲁棒性评测
+    - 8.2.1 任务描述
+- 九、事件抽取
+- 9.1 CCKS 2020：面向金融领域的小样本跨类迁移事件抽取
+    - 9.1.1 任务描述
+    - 9.1.2 比赛方案
+- 9.2 CCKS2019_EventEntityExtraction
+    - 9.1.1 任务描述
+    - 9.1.2 比赛方案
+- 9.3 2020 科大讯飞事件抽取挑战赛
+    - 9.3.1 任务描述
+    - 9.3.2 比赛方案
+- 十、阅读理解
+- 10.1 2021海华AI挑战赛·中文阅读理解·技术组
+    - 10.1.1 赛题背景
+    - 10.1.2 比赛任务
+    - 10.1.3 比赛方案
+- 十一、关系抽取
+- 11.1 2020语言与智能技术竞赛：关系抽取任务 【比赛链接】
+    - 11.1.1 赛题背景
+    - 11.1.2 赛题说明
+    - 11.1.3 数据集介绍
+    - 11.1.4 比赛方案
+- 十二、中文文本纠错
+- 12.1 专业赛：自然语言处理技术创新大赛——中文文本纠错比赛
+    - 12.1.1 竞赛背景
+    - 12.1.2 赛题描述
+    - 12.1.3 模型训练
+    - 12.1.4 训练集数据介绍
+    - 12.1.5 比赛方案
+- 十三、CCF BDCI
+- 13.1 CCF BDCI 智能人机交互自然语言理解
+    - 13.1.1 竞赛背景
+    - 13.1.2 数据集介绍
+- 13.2 CCF BDCI 预训练模型知识量度量
+    - 13.2.1 竞赛背景
+    - 13.2.2 数据集介绍
+- 参考资料
 
-#### [【关于 NLP 比赛方案学习】 那些你不知道的事](nlp_game/game_study/)
+#### [【关于 NLP 比赛方案学习】 那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/nlp_game/game_study/)
 
-##### [【关于 NLP 比赛方案学习】 那些你不知道的事](nlp_game/game_study/)
+##### [【关于 NLP 比赛方案学习】 那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/nlp_game/game_study/)
 
-- [实体链指](nlp_game/game_study/实体链指/)
+- [实体链指](https://github.com/km1994/nlp_paper_study/tree/master/nlp_game/game_study/实体链指/)
   - [CCKS&2019中文短文本的实体链指](nlp_game/game_study/实体链指/CCKS&2019中文短文本的实体链指)
     - [CCKS2019中文短文本实体链指比赛技术创新奖解决方案](nlp_game/实体链指/CCKS&2019中文短文本的实体链指/CCKS2019中文短文本实体链指比赛技术创新奖解决方案)
     - [CCKS2020实体链指比赛小米KG冠军方案](nlp_game/实体链指/CCKS&2019中文短文本的实体链指/CCKS2020实体链指比赛小米KG冠军方案)
@@ -1627,9 +1929,9 @@
   - [GPT2-NewsTitle](https://github.com/liucongg/GPT2-NewsTitle)
 - [CLUEDatasetSearch](https://github.com/CLUEbenchmark/CLUEDatasetSearch)【中英文NLP数据集】
 
-### [NLP 数据集](nlp_corpus/)
+### [NLP 数据集](https://github.com/km1994/nlp_paper_study/tree/master/nlp_corpus/)
 
-- [【关于 NLP 语料】那些你不知道的事](nlp_corpus/)
+- [【关于 NLP 语料】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/nlp_corpus/)
   - 一、命名实体识别
     1. [boson数据集](nlp_corpus/ner_data/boson/)
     2. [clue细粒度实体识别数据集](nlp_corpus/ner_data/cluener_public/)
