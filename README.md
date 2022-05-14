@@ -35,6 +35,10 @@
       - [理论学习篇](#理论学习篇)
         - [经典论文研读篇](#经典论文研读篇)
         - [【关于 transformer 】 那些的你不知道的事](#关于-transformer--那些的你不知道的事)
+          - [transformer 篇](#transformer-篇)
+          - [transformer 改进篇](#transformer-改进篇)
+          - [transformer 长文本改进篇](#transformer-长文本改进篇)
+          - [transformer 变体综述篇](#transformer-变体综述篇)
         - [【关于 预训练模型】 那些的你不知道的事](#关于-预训练模型-那些的你不知道的事)
         - [【关于 Prompt】 那些的你不知道的事](#关于-prompt-那些的你不知道的事)
           - [【关于 Prompt For NER】 那些的你不知道的事](#关于-prompt-for-ner-那些的你不知道的事)
@@ -51,6 +55,7 @@
           - [【关于 实体消歧 】 那些的你不知道的事](#关于-实体消歧--那些的你不知道的事)
           - [【关于KGQA 】 那些的你不知道的事](#关于kgqa--那些的你不知道的事)
           - [【关于Neo4j  】 那些的你不知道的事](#关于neo4j---那些的你不知道的事)
+          - [【关于 知识图谱补全(图谱推理) 】 那些的你不知道的事](#关于-知识图谱补全图谱推理--那些的你不知道的事)
         - [【关于 NLP Trick】那些你不知道的事](#关于-nlp-trick那些你不知道的事)
           - [【关于 Dropout】那些你不知道的事](#关于-dropout那些你不知道的事)
           - [【关于 主动学习】那些的你不知道的事](#关于-主动学习那些的你不知道的事)
@@ -143,92 +148,118 @@
 
 ##### 【关于 transformer 】 那些的你不知道的事
 
-- [【关于Transformer】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study_transformer/tree/master/DL_algorithm/transformer_study/)  transformer 论文学习
-  - [【关于Transformer】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study_transformer/tree/master/DL_algorithm/transformer_study/Transformer/)
-    1. 为什么要有 Transformer?
-    2. Transformer 作用是什么？
-    3. Transformer 整体结构怎么样？
-    4. Transformer-encoder 结构怎么样？
-    5. Transformer-decoder 结构怎么样?
-    6. 传统 attention 是什么?
-    7. self-attention 长怎么样?
-    8. self-attention 如何解决长距离依赖问题？
-    9. self-attention 如何并行化？
-    10. multi-head attention 怎么解?
-    11. 为什么要 加入 position embedding ？
-    12. 为什么要 加入 残差模块？
-    13. Layer normalization。Normalization 是什么?
-    14. 什么是 Mask？
-    15. Transformer 存在问题？
-    16. Transformer 怎么 Coding?
-  - [【关于 Transformer-XL】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study_transformer/tree/master/DL_algorithm/transformer_study/T3_Transformer_XL/)
-    - 动机
-      - RNN：主要面临梯度消失或爆炸（gradient vanishing and explosion），解决方法集中在优化方法、初始化策略、辅助记忆单元的研究上。
-      - vanilla Transformer：最长建模长度是固定的，无法捕捉更长依赖关系；等长输入序列的获取通常没有遵循句子或语义边界（出于高效考虑，往往就是将文本按长度一段段截取，而没有采用padding机制），可能造成上下文碎片化（context fragmentation）。
-    - 方法
-      - 引入循环机制（Reccurrence，让上一segment的隐含状态可以传递到下一个segment）：将循环（recurrence）概念引入了深度自注意力网络。不再从头计算每个新segment的隐藏状态，而是复用从之前segments中获得的隐藏状态。被复用的隐藏状态视为当前segment的memory，而当前的segment为segments之间建立了循环连接（recurrent connection）。因此，超长依赖性建模成为了可能，因为信息可以通过循环连接来传播。
-      - 提出一种新的相对位置编码方法，避免绝对位置编码在循环机制下的时序错乱：从之前的segment传递信息也可以解决上下文碎片化的问题。更重要的是，本文展示了使用相对位置而不是用绝对位置进行编码的必要性，这样做可以在不造成时间混乱（temporal confusion）的情况下，实现状态的复用。因此，作为额外的技术贡献，文本引入了简单但有效的相对位置编码公式，它可以泛化至比在训练过程中观察到的长度更长的注意力长度。
-  - [【关于 SHA_RNN】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study_transformer/tree/master/DL_algorithm/transformer_study/SHA_RNN_study/)
-    - 论文名称：Single Headed Attention RNN: Stop Thinking With Your Head 单头注意力 RNN: 停止用你的头脑思考
-  - [【关于 Universal Transformers】 那些你不知道的事](https://github.com/km1994/nlp_paper_study_transformer/tree/master/DL_algorithm/transformer_study/T4_Universal_Transformers/)
-  - [【关于Style_Transformer】 那些你不知道的事](https://github.com/km1994/nlp_paper_study_transformer/tree/master/DL_algorithm/transformer_study/Style_Transformer/LCNQA/)
-  - [【关于 Linformer 】 那些你不知道的事](https://github.com/km1994/nlp_paper_study_transformer/tree/master/DL_algorithm/transformer_study/ACL2020_Linformer)
-    - 论文标题：《Linformer: Self-Attention with Linear Complexity》
-    - 来源：ACL 2020
-    - 链接：https://arxiv.org/abs/2006.04768
-    - 参考：https://zhuanlan.zhihu.com/p/149890569
-  - [【关于 Performer 】 那些你不知道的事](https://github.com/km1994/nlp_paper_study_transformer/tree/master/DL_algorithm/transformer_study/Performer) **【推荐阅读】**
-    - 阅读理由：Transformer 作者 Krzysztof Choromanski 针对 Transformer 问题的重新思考与改进
-    - 动机：Transformer 有着巨大的内存和算力需求，因为它构造了一个注意力矩阵，需求与输入呈平方关系;
-    - 思路：使用一个高效的（线性）广义注意力框架（generalized attention framework），允许基于不同相似性度量（核）的一类广泛的注意力机制。
-    - 优点：该方法在保持线性空间和时间复杂度的同时准确率也很有保证，也可以应用到独立的 softmax 运算。此外，该方法还可以和可逆层等其他技术进行互操作。
-  - [【关于 Efficient Transformers: A Survey】 那些你不知道的事](https://github.com/km1994/nlp_paper_study_transformer/tree/master/DL_algorithm/transformer_survey/Performer)
-    - 一、摘要
-    - 二、Transformer 介绍
-    - 三、Efficient Transformers
-      - 3.1 Fixed patterns（FP）
-        - 3.1.1 Fixed patterns（FP） 介绍
-        - 3.1.2 Fixed patterns（FP） 类别
-      - 3.2 Combination of Patterns (CP)
-        - 3.2.1 Combination of Patterns (CP) 介绍
-        - 3.2.2 Combination of Patterns (CP)  类别
-        - 3.2.3 Fixed patterns（FP） vs 多Combination of Patterns (CP)
-      - 3.3 Learnable Patterns (LP)
-        - 3.3.1 Learnable Patterns (LP) 介绍
-        - 3.3.2 Learnable Patterns (LP)  类别
-        - 3.3.3 Learnable Patterns (LP)  优点
-      - 3.4 Memory
-        - 3.4.1 Memory 介绍
-        - 3.4.2 Memory 类别
-      - 3.5 Low-Rank 方法
-        - 3.5.1 Low-Rank 方法 介绍
-        - 3.5.2 Low-Rank 方法 类别
-      - 3.6 Kernels 方法
-        - 3.6.1  Kernels 方法 介绍
-        - 3.6.2  Kernels 方法 代表
-      - 3.7  Recurrence 方法
-        - 3.7.1  Recurrence 方法 介绍
-        - 3.7.2  Kernels 方法 代表
-    - 四、Transformer 变体 介绍
-      - 4.1 引言
-      - 4.2 Memory Compressed Transformer 
-      - 4.3 Image Transformer 
-      - 4.4 Set Transformer 
-      - 4.5 Sparse Transformer
-      - 4.6 Axial Transformer
-      - 4.7 Longformer
-      - 4.8  Extended Transformer Construction (ETC)（2020）
-      - 4.9  BigBird（2020）
-      - 4.10  Routing Transformer
-      - 4.11  Reformer（2020）
-      - 4.12  Sinkhorn Transformers
-      - 4.13  Linformer
-      - 4.14   Linear Transformer
-      - 4.15  Performer（2020）
-      - 4.16  Synthesizer models（2020）
-      - 4.17  Transformer-XL（2020）
-      - 4.18  Compressive Transformers
-    - 五、总结
+###### transformer 篇
+
+- [【关于Transformer】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study_transformer/tree/master/DL_algorithm/transformer_study/Transformer/)
+  1. 为什么要有 Transformer?
+  2. Transformer 作用是什么？
+  3. Transformer 整体结构怎么样？
+  4. Transformer-encoder 结构怎么样？
+  5. Transformer-decoder 结构怎么样?
+  6. 传统 attention 是什么?
+  7. self-attention 长怎么样?
+  8. self-attention 如何解决长距离依赖问题？
+  9. self-attention 如何并行化？
+  10. multi-head attention 怎么解?
+  11. 为什么要 加入 position embedding ？
+  12. 为什么要 加入 残差模块？
+  13. Layer normalization。Normalization 是什么?
+  14. 什么是 Mask？
+  15. Transformer 存在问题？
+  16. Transformer 怎么 Coding?
+
+###### transformer 改进篇
+
+- [【关于 SHA_RNN】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study_transformer/tree/master/DL_algorithm/transformer_study/SHA_RNN_study/)
+  - 论文名称：Single Headed Attention RNN: Stop Thinking With Your Head 单头注意力 RNN: 停止用你的头脑思考
+- [【关于 Universal Transformers】 那些你不知道的事](https://github.com/km1994/nlp_paper_study_transformer/tree/master/DL_algorithm/transformer_study/T4_Universal_Transformers/)
+- [【关于Style_Transformer】 那些你不知道的事](https://github.com/km1994/nlp_paper_study_transformer/tree/master/DL_algorithm/transformer_study/Style_Transformer/LCNQA/)
+
+###### transformer 长文本改进篇
+
+- [【关于 Longformer】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study_transformer/tree/master/DL_algorithm/transformer_study/naacl2021_longformer/)
+- 论文：Longformer: The Long-Document Transformer
+- 发表会议：naacl2021
+- 论文地址：https://arxiv.org/abs/2004.05150
+- github：https://github.com/allenai/longformer
+- 动机：
+  - 基于传统Transformer的模型，因为 每一个token都要与其他所有token进行交互，其**self-attention的点积计算量都是 O(n^2)** ，(其中 n 为输入序列长度)，因此对于长序列的处理存在内存瓶颈（self-attention的计算可以并行化，所以时间复杂度仍然是 O(n) ）。这也是传统Transformer模型把输入长度限制在512个token以内的原因之一。
+  - 在面对超过长度限制的长文档时，往往需要**进行切片、截断或者抽取重要片段等处理**，这种做法 导致不同的text span之间无法进行交互，因而必然存在大量information loss，**既繁琐又破坏了原始文本的完整性**。
+  - 通过添加一些其他机制来加强这种text span之间的交互。但这种新增机制实现起来通常比较复杂，而且往往是task-specific的，通用性不强
+- 论文方法
+  - 对于每一个token，**只对固定窗口大小的附近token计算local attention**，并结合具体任务，**计算少量的global attention**。该方法的优点包括：
+    - 复杂度低，将attention机制的复杂度降至 O(n)
+    - 通用性强，可用于各类文档级任务
+    - 部署容易，作者在cuda内核上直接实现了Longformer的attention pattern，并提供了开源代码。
+
+- [【关于 Transformer-XL】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study_transformer/tree/master/DL_algorithm/transformer_study/T3_Transformer_XL/)
+  - 动机
+    - RNN：主要面临梯度消失或爆炸（gradient vanishing and explosion），解决方法集中在优化方法、初始化策略、辅助记忆单元的研究上。
+    - vanilla Transformer：最长建模长度是固定的，无法捕捉更长依赖关系；等长输入序列的获取通常没有遵循句子或语义边界（出于高效考虑，往往就是将文本按长度一段段截取，而没有采用padding机制），可能造成上下文碎片化（context fragmentation）。
+  - 方法
+    - 引入循环机制（Reccurrence，让上一segment的隐含状态可以传递到下一个segment）：将循环（recurrence）概念引入了深度自注意力网络。不再从头计算每个新segment的隐藏状态，而是复用从之前segments中获得的隐藏状态。被复用的隐藏状态视为当前segment的memory，而当前的segment为segments之间建立了循环连接（recurrent connection）。因此，超长依赖性建模成为了可能，因为信息可以通过循环连接来传播。
+    - 提出一种新的相对位置编码方法，避免绝对位置编码在循环机制下的时序错乱：从之前的segment传递信息也可以解决上下文碎片化的问题。更重要的是，本文展示了使用相对位置而不是用绝对位置进行编码的必要性，这样做可以在不造成时间混乱（temporal confusion）的情况下，实现状态的复用。因此，作为额外的技术贡献，文本引入了简单但有效的相对位置编码公式，它可以泛化至比在训练过程中观察到的长度更长的注意力长度。
+- [【关于 Linformer 】 那些你不知道的事](https://github.com/km1994/nlp_paper_study_transformer/tree/master/DL_algorithm/transformer_study/ACL2020_Linformer)
+  - 论文标题：《Linformer: Self-Attention with Linear Complexity》
+  - 来源：ACL 2020
+  - 链接：https://arxiv.org/abs/2006.04768
+  - 参考：https://zhuanlan.zhihu.com/p/149890569
+- [【关于 Performer 】 那些你不知道的事](https://github.com/km1994/nlp_paper_study_transformer/tree/master/DL_algorithm/transformer_study/Performer) **【推荐阅读】**
+  - 阅读理由：Transformer 作者 Krzysztof Choromanski 针对 Transformer 问题的重新思考与改进
+  - 动机：Transformer 有着巨大的内存和算力需求，因为它构造了一个注意力矩阵，需求与输入呈平方关系;
+  - 思路：使用一个高效的（线性）广义注意力框架（generalized attention framework），允许基于不同相似性度量（核）的一类广泛的注意力机制。
+  - 优点：该方法在保持线性空间和时间复杂度的同时准确率也很有保证，也可以应用到独立的 softmax 运算。此外，该方法还可以和可逆层等其他技术进行互操作。
+
+
+###### transformer 变体综述篇
+
+- [【关于 Efficient Transformers: A Survey】 那些你不知道的事](https://github.com/km1994/nlp_paper_study_transformer/tree/master/DL_algorithm/transformer_survey/Performer)
+  - 一、摘要
+  - 二、Transformer 介绍
+  - 三、Efficient Transformers
+    - 3.1 Fixed patterns（FP）
+      - 3.1.1 Fixed patterns（FP） 介绍
+      - 3.1.2 Fixed patterns（FP） 类别
+    - 3.2 Combination of Patterns (CP)
+      - 3.2.1 Combination of Patterns (CP) 介绍
+      - 3.2.2 Combination of Patterns (CP)  类别
+      - 3.2.3 Fixed patterns（FP） vs 多Combination of Patterns (CP)
+    - 3.3 Learnable Patterns (LP)
+      - 3.3.1 Learnable Patterns (LP) 介绍
+      - 3.3.2 Learnable Patterns (LP)  类别
+      - 3.3.3 Learnable Patterns (LP)  优点
+    - 3.4 Memory
+      - 3.4.1 Memory 介绍
+      - 3.4.2 Memory 类别
+    - 3.5 Low-Rank 方法
+      - 3.5.1 Low-Rank 方法 介绍
+      - 3.5.2 Low-Rank 方法 类别
+    - 3.6 Kernels 方法
+      - 3.6.1  Kernels 方法 介绍
+      - 3.6.2  Kernels 方法 代表
+    - 3.7  Recurrence 方法
+      - 3.7.1  Recurrence 方法 介绍
+      - 3.7.2  Kernels 方法 代表
+  - 四、Transformer 变体 介绍
+    - 4.1 引言
+    - 4.2 Memory Compressed Transformer 
+    - 4.3 Image Transformer 
+    - 4.4 Set Transformer 
+    - 4.5 Sparse Transformer
+    - 4.6 Axial Transformer
+    - 4.7 Longformer
+    - 4.8  Extended Transformer Construction (ETC)（2020）
+    - 4.9  BigBird（2020）
+    - 4.10  Routing Transformer
+    - 4.11  Reformer（2020）
+    - 4.12  Sinkhorn Transformers
+    - 4.13  Linformer
+    - 4.14   Linear Transformer
+    - 4.15  Performer（2020）
+    - 4.16  Synthesizer models（2020）
+    - 4.17  Transformer-XL（2020）
+    - 4.18  Compressive Transformers
+  - 五、总结
 
 ##### 【关于 预训练模型】 那些的你不知道的事
 
@@ -548,6 +579,17 @@
 
 ###### [【关于 实体关系联合抽取】那些的你不知道的事](https://github.com/km1994/nlp_paper_study_information_extraction/tree/master/information_extraction/ERE_study/)
 
+- [【关于 PL-Marker 】 那些你不知道的事](https://github.com/km1994/nlp_paper_study_information_extraction/tree/master/information_extraction/ERE_study/ACL2022_PL-Marker/) 
+  - 论文名称：《Packed Levitated Marker for Entity and Relation Extraction》
+  - 会议：ACL2022
+  - 论文地址：https://arxiv.org/abs/2109.06067v4
+  - 源码地址：https://github.com/thunlp/PL-Marker
+  - 动机：现有作品的一个主要限制是它们忽略了span（对）之间的相互关系。
+  - 论文工作：提出了一种新的span表示方法，称为 Packed Levitated Markers (PL-Marker):
+    - 通过战略性地在编码器中 packing the markers 来考虑span（对）之间的相互关系。
+    - 提出了一种 neighborhood-oriented packing strategy ，该策略综合考虑了邻域span，以更好地建模实体边界信息。
+    - 对于那些更复杂的span对分类任务，我们设计了一种面向主题的 packs  策略，将每个主题及其所有对象 packs  ，以模拟同一主题span对之间的相互关系。实验结果表明，通过增强标记特征，
+  - 论文结果：在六个 NER 基准上推进了基线，并且在 ACE04 和 ACE05 上比之前的最先进模型更快地获得了 4.1%-4.3% 的严格关系 F1 改进.
 - [【关于 PURE】 那些你不知道的事](https://github.com/km1994/nlp_paper_study_information_extraction/tree/master/information_extraction/ERE_study/PURE/) 【强烈推荐】
   - 论文：A Frustratingly Easy Approach for Joint Entity and Relation Extraction
   - 阅读理由：反直觉！陈丹琦用pipeline方式刷新关系抽取SOTA 
@@ -563,7 +605,7 @@
     - Q1、关系抽取最care什么？
       - 解答：引入实体类别信息会让你的关系模型有提升
     - Q2、共享编码 VS 独立编码 哪家强？
-      -  解答：由于两个任务各自是不同的输入形式，并且需要不同的特征去进行实体和关系预测，也就是说：使用单独的编码器确实可以学习更好的特定任务特征。
+      - 解答：由于两个任务各自是不同的输入形式，并且需要不同的特征去进行实体和关系预测，也就是说：使用单独的编码器确实可以学习更好的特定任务特征。
     - Q3：误差传播不可避免？还是不存在？
       - 解答：并不认为误差传播问题不存在或无法解决，而需要探索更好的解决方案来解决此问题
     - Q4：Effect of Cross-sentence Context
@@ -586,6 +628,20 @@
       - **Relation-Specific Sequence Tagging**：然后执行序列标注，标注存在的主体客体，以处理 subjects  and  object 之间的重叠问题；
       - **Global Correspondence**：枚举所有实体对，由全局矩阵裁剪；
     - 实验结果：PRGC 以更高的效率在公共基准测试中实现了最先进的性能，并在重叠三元组的复杂场景中提供了一致的性能增益
+- [【关于 PFN】 那些你不知道的事](https://github.com/km1994/nlp_paper_study_information_extraction/tree/master/information_extraction/ERE_study/EMNLP2021_PFN)
+  - 论文名称：PFN:A Partition Filter Network for Joint Entity and Relation Extraction
+  - 会议：EMNLP2021
+  - 论文地址：https://arxiv.org/abs/2108.12202v8
+  - 源码地址：https://github.com/Coopercoppers/PFN
+  - 动机：
+    - 在联合实体和关系提取中，现有工作要么顺序编码任务特定的特征，导致任务间特征交互的不平衡，即后来提取的特征与先提取的特征没有直接联系。
+    - 或者它们以并行方式编码实体特征和关系特征，这意味着每个任务的特征表示学习在很大程度上是相互独立的，除了输入共享。
+  - 论文方法：提出了一个分区过滤网络来适当地模拟任务之间的双向交互，
+    - 其中特征编码被分解为两个步骤：分区和过滤。
+      - 在我们的编码器中，我们利用两个门：实体门和关系门，将神经元分割成两个任务分区和一个共享分区。
+      - 共享分区代表对两个任务都有价值的任务间信息，并在两个任务之间均匀共享，以确保正确的双向交互。
+      - 任务分区代表任务内信息，并通过两个门的共同努力形成，确保任务特定特征的编码相互依赖。
+  - 论文实验：在六个公共数据集上的实验结果表明，我们的模型比以前的方法表现得更好。此外，与之前的工作所声称的相反，我们的辅助实验表明关系预测对命名实体预测的贡献是不可忽略的。
 - [【关于 实体关系联合抽取】那些你不知道的事](https://github.com/km1994/nlp_paper_study_information_extraction/tree/master/information_extraction/ERE_study/实体关系联合抽取总结.md)
   1. pipeline  方法
      1. 思路：先命名实体识别（ NER） , 在 关系抽取（RE）
@@ -692,6 +748,18 @@
 
 ###### [【关于 命名实体识别】那些你不知道的事](https://github.com/km1994/nlp_paper_study_information_extraction/tree/master/information_extraction/NER_study/)
 
+- [【关于 Label Semantics for Few Shot NER】 那些你不知道的事](https://github.com/km1994/nlp_paper_study_information_extraction/tree/master/information_extraction/NER_study/ACL2022_LabelSemanticsForFewShotNER) 【推荐理由：ACL2022 SOTA】
+  - 论文名称：Label Semantics for Few Shot Named Entity Recognition
+  - 会议：ACL2022
+  - 论文地址：https://arxiv.org/abs/2203.08985
+  - 动机：命名实体识别的少数镜头学习问题。
+  - 论文方法：
+    - 利用标签名称中的语义信息作为为模型提供额外信号和丰富先验的一种方式；
+    - 提出了一种由两个 BERT 编码器组成的神经架构：
+      - 一个用于编码文档及其标记；
+      - 一个用于以自然语言格式对每个标签进行编码。
+    - 我们的模型学习将第一个编码器计算的命名实体的表示与第二个编码器计算的标签表示相匹配。
+  - 实验结果：标签语义信号被证明可以在多个少数镜头 NER 基准测试中支持改进的最先进的结果，并在标准基准测试中提供同等性能。我们的模型在资源匮乏的环境中特别有效。
 - [【关于 命名实体识别 之 W2NER 】 那些你不知道的事](https://github.com/km1994/nlp_paper_study_information_extraction/tree/master/information_extraction/NER_study/AAAI2022_W2NER)
   - 论文：Unified Named Entity Recognition as Word-Word Relation Classification
   - 会议：AAAI 2022
@@ -1112,31 +1180,6 @@
           - 这个流程中的合并判断模型实际上是通过机器学习训练生成的二分类器。
       - 知识存储
 
-- [【关于 Complex KBQA】 那些你不知道的事](https://github.com/km1994/nlp_paper_study_kg/tree/master/KG_study/ComplexKBQA/)
-  - 论文：A Survey on Complex Knowledge Base Question Answering:Methods, Challenges and Solutions
-  - 会议：IJCAI'2021
-  - 论文地址：https://www.ijcai.org/proceedings/2021/0611.pdf
-  - 动机：
-    - 相比仅包含单个关系事实的简单问题，复杂问题通常有以下几个特征
-      - **需要在知识图谱中做多跳推理 (multi-hop reasoning)**
-      - **需要考虑题目中给的限制词 (constrained relations)**
-      - **需要考虑数字运算的情况 (numerical operations)**
-    - **基于语义解析的方法还是信息检索的方法都将遇到新的挑战**：
-      - **传统方法无法支撑问题的复杂逻辑**
-      - **复杂问题包含了更多的实体，导致在知识图谱中搜索空间变大**
-      - **两种方法都将问题理解作为首要步骤**
-      - **通常 Complex KBQA 数据集缺少对正确路径的标注**
-  - 预测答案两类主流的方法
-    - 基于语义解析（SP-based）的方法
-      - 问题理解 (question understanding) 模块
-      - 逻辑解析 (logical parsing) 模块
-      - 知识图谱实例化 (KB grounding) 模块
-      - 知识执行 (KB execution) 模块
-    - 基于信息检索（IR-based）的方法
-      - 子图构建 (retrieval source construction) 模块
-      - 问题表达 (question representation) 模块
-      - 基于图结构的推理 (graph based reasoning) 模块
-      - 答案排序 (answer ranking) 模块
 
 ###### [【关于 实体链指篇】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study_kg/tree/master/KG_study/entity_linking/)
 - [【关于  Low-resource Cross-lingual Entity Linking】 那些你不知道的事](https://github.com/km1994/nlp_paper_study_kg/tree/master/KG_study/entity_linking/LowResourceCrossLingualEntityLinking/)
@@ -1177,6 +1220,32 @@
   - 会议：ACL2020
   - 链接：https://www.aclweb.org/anthology/2020.acl-main.91/
   - 代码：https://github.com/lanyunshi/Multi-hopComplexKBQA
+- [【关于 Complex KBQA】 那些你不知道的事](https://github.com/km1994/nlp_paper_study_kg/tree/master/KG_study/ComplexKBQA/)
+  - 论文：A Survey on Complex Knowledge Base Question Answering:Methods, Challenges and Solutions
+  - 会议：IJCAI'2021
+  - 论文地址：https://www.ijcai.org/proceedings/2021/0611.pdf
+  - 动机：
+    - 相比仅包含单个关系事实的简单问题，复杂问题通常有以下几个特征
+      - **需要在知识图谱中做多跳推理 (multi-hop reasoning)**
+      - **需要考虑题目中给的限制词 (constrained relations)**
+      - **需要考虑数字运算的情况 (numerical operations)**
+    - **基于语义解析的方法还是信息检索的方法都将遇到新的挑战**：
+      - **传统方法无法支撑问题的复杂逻辑**
+      - **复杂问题包含了更多的实体，导致在知识图谱中搜索空间变大**
+      - **两种方法都将问题理解作为首要步骤**
+      - **通常 Complex KBQA 数据集缺少对正确路径的标注**
+  - 预测答案两类主流的方法
+    - 基于语义解析（SP-based）的方法
+      - 问题理解 (question understanding) 模块
+      - 逻辑解析 (logical parsing) 模块
+      - 知识图谱实例化 (KB grounding) 模块
+      - 知识执行 (KB execution) 模块
+    - 基于信息检索（IR-based）的方法
+      - 子图构建 (retrieval source construction) 模块
+      - 问题表达 (question representation) 模块
+      - 基于图结构的推理 (graph based reasoning) 模块
+      - 答案排序 (answer ranking) 模块
+
 
 ###### [【关于Neo4j  】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study_kg/tree/master/KG_study/neo4j/)
 
@@ -1200,6 +1269,30 @@
   - 四、数据导入 Neo4j 图数据库篇
 
 - [【关于 Neo4j 索引】那些你不知道的事](https://github.com/km1994/nlp_paper_study_kg/tree/master/KG_study/neo4j/index.md)
+
+###### [【关于 知识图谱补全(图谱推理) 】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study_kg/tree/master/KG_study/KG_reasoning/)
+
+- [【关于 知识图谱补全】那些你不知道的事](https://github.com/km1994/nlp_paper_study_kg/tree/master/KG_study/KG_reasoning/)
+
+- [【关于 基于逻辑规则的图谱推理 RNNLogic 】 那些你不知道的事]()
+  - 论文：RNNLogic: Learning Logic Rules for Reasoning on Knowledge Graphs
+  - 动机：
+    - **图谱信息是不完全的**，而补全图谱的人工成本又是非常巨大的，尤其是像是一些医药、金融等一些特定的领域。如果还要考虑知识的动态更新的话，就更加大了图谱补全的难度。
+    - 图谱表示法：模型缺乏可解释性
+    - 归纳逻辑编程法：对规则的搜索空间大，因为固定的生成器。如果想要得到比较好的结果就要尝试大量的逻辑规则，导致效率较低。
+    - 基于强化学习的方法：整个框架的优化很难；依赖KGE（图谱嵌入）的方法来做激励调整。
+  - 论文思路：
+    - 研究点 1：链式的逻辑规则：可以将链式的逻辑规则变成一个关系序列，其中用END来表示结尾。那很自然的，可以通过LSTM来生成这些不同的链式逻辑规则，并输出每一条逻辑规则的概率，进而得到一个弱逻辑规则的集合；
+    - 研究点 2：随机逻辑编程（stochastic logic programming）：
+      - 会通过生成器的弱关系集合进行游走，如图中所示的两种关系链：
+        - 第一种可以得到France这个答案；
+        - 第二个逻辑规则可以得到France，Canada和US三个答案。
+      - 对于每个潜在答案，我们可以给它定义一个分数，也就是到达这个实体的逻辑规则的weight的和。
+      - 最后就可以根据分数得到每种答案的概率，挑选出那些概率最大的来当成我们最终的答案。
+    - 研究点 3：优化方法
+      - 1. 给定一个查询（Query），让生成器生成很多逻辑规则，再把逻辑规则和知识图谱同时送到预测器里面，去更新预测器，最大化生成正确答案的概率；
+      - 2. 从所有生成的这些逻辑规则里面去挑选出那些最重要的逻辑规则。这里我们通过使用后验推断的方法来计算每一条弱的逻辑规则的后验概率进行挑选。因此，在整个过程中，每一条弱的规则概率是由生成器来提供的，似然函数由预测器来提供。这样结合两者共同的信息来得到一个比较重要的逻辑规则；
+      - 3. 把找到的高质量的逻辑规则当成训练数据，送回生成器去学习；
 
 ##### 【关于 NLP Trick】那些你不知道的事
 
