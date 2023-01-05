@@ -41,6 +41,8 @@
           - [transformer 变体综述篇](#transformer-变体综述篇)
         - [【关于 预训练模型】 那些的你不知道的事](#关于-预训练模型-那些的你不知道的事)
         - [【关于 Prompt】 那些的你不知道的事](#关于-prompt-那些的你不知道的事)
+          - [【关于 Prompts2QA 】 那些的你不知道的事](#关于-prompts2qa--那些的你不知道的事)
+          - [【关于 Prompts2Summarization】 那些的你不知道的事](#关于-prompts2summarization-那些的你不知道的事)
           - [【关于 Prompt For NER】 那些的你不知道的事](#关于-prompt-for-ner-那些的你不知道的事)
         - [【关于 信息抽取】那些的你不知道的事](#关于-信息抽取那些的你不知道的事)
           - [【关于 通用信息抽取】 那些的你不知道的事](#关于-通用信息抽取-那些的你不知道的事)
@@ -184,19 +186,19 @@
 ###### transformer 长文本改进篇
 
 - [【关于 Longformer】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study_transformer/tree/master/DL_algorithm/transformer_study/naacl2021_longformer/)
-- 论文：Longformer: The Long-Document Transformer
-- 发表会议：naacl2021
-- 论文地址：https://arxiv.org/abs/2004.05150
-- github：https://github.com/allenai/longformer
-- 动机：
-  - 基于传统Transformer的模型，因为 每一个token都要与其他所有token进行交互，其**self-attention的点积计算量都是 O(n^2)** ，(其中 n 为输入序列长度)，因此对于长序列的处理存在内存瓶颈（self-attention的计算可以并行化，所以时间复杂度仍然是 O(n) ）。这也是传统Transformer模型把输入长度限制在512个token以内的原因之一。
-  - 在面对超过长度限制的长文档时，往往需要**进行切片、截断或者抽取重要片段等处理**，这种做法 导致不同的text span之间无法进行交互，因而必然存在大量information loss，**既繁琐又破坏了原始文本的完整性**。
-  - 通过添加一些其他机制来加强这种text span之间的交互。但这种新增机制实现起来通常比较复杂，而且往往是task-specific的，通用性不强
-- 论文方法
-  - 对于每一个token，**只对固定窗口大小的附近token计算local attention**，并结合具体任务，**计算少量的global attention**。该方法的优点包括：
-    - 复杂度低，将attention机制的复杂度降至 O(n)
-    - 通用性强，可用于各类文档级任务
-    - 部署容易，作者在cuda内核上直接实现了Longformer的attention pattern，并提供了开源代码。
+  - 论文：Longformer: The Long-Document Transformer
+  - 发表会议：naacl2021
+  - 论文地址：https://arxiv.org/abs/2004.05150
+  - github：https://github.com/allenai/longformer
+  - 动机：
+    - 基于传统Transformer的模型，因为 每一个token都要与其他所有token进行交互，其**self-attention的点积计算量都是 O(n^2)** ，(其中 n 为输入序列长度)，因此对于长序列的处理存在内存瓶颈（self-attention的计算可以并行化，所以时间复杂度仍然是 O(n) ）。这也是传统Transformer模型把输入长度限制在512个token以内的原因之一。
+    - 在面对超过长度限制的长文档时，往往需要**进行切片、截断或者抽取重要片段等处理**，这种做法 导致不同的text span之间无法进行交互，因而必然存在大量information loss，**既繁琐又破坏了原始文本的完整性**。
+    - 通过添加一些其他机制来加强这种text span之间的交互。但这种新增机制实现起来通常比较复杂，而且往往是task-specific的，通用性不强
+  - 论文方法
+    - 对于每一个token，**只对固定窗口大小的附近token计算local attention**，并结合具体任务，**计算少量的global attention**。该方法的优点包括：
+      - 复杂度低，将attention机制的复杂度降至 O(n)
+      - 通用性强，可用于各类文档级任务
+      - 部署容易，作者在cuda内核上直接实现了Longformer的attention pattern，并提供了开源代码。
 
 - [【关于 Transformer-XL】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study_transformer/tree/master/DL_algorithm/transformer_study/T3_Transformer_XL/)
   - 动机
@@ -400,7 +402,7 @@
         - Document Rotation（文档旋转）：随机均匀地选择 token，旋转文档使文档从该 token 开始。该任务的目的是训练模型识别文档开头；
         - Token Deletion（token 删除）：从输入中随机删除 token。与 token 掩码不同，模型必须确定缺失输入的位置；
         - Text Infilling（文本填充）：采样多个文本段，文本段长度取决于泊松分布 (λ = 3)。用单个掩码 token 替换每个文本段。长度为 0 的文本段对应掩码 token 的插入；
-  - [【关于 Bart】 那些你不知道的事](https://github.com/km1994/nlp_paper_study_bert/bert_study/BART)
+  - [【关于 MacBERT】 那些你不知道的事](https://github.com/km1994/nlp_paper_study_bert/bert_study/MacBERT)
     - 论文名称：Revisiting Pre-trained Models for Chinese Natural Language Processing 
     - 会议：EMNLP 2020
     - 论文地址：https://arxiv.org/abs/2004.13922
@@ -557,6 +559,29 @@
         - 优点：对于一些 占位符（eg：<e></e>），方法一和方法二可能都无法生效，因为 <, e, >和 <e></e>均存在于 vocab.txt，但前三者的优先级高于 <e></e>，而 add_special_tokens会起效，却会使得词汇表大小增大，从而需另外调整模型size。但是，如果同时在词汇表vocab.txt中替换[unused]，同时 add_special_tokens，则新增词会起效，同时词汇表大小不变。
 
 ##### 【关于 Prompt】 那些的你不知道的事
+
+###### [【关于 Prompts2QA 】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/prompt/Prompts2QA/)
+
+- [【关于 基于反向提示的预训练模型可控文本生成】 那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/prompt/Prompts2QA/ControllableGenerationFromPLMviaInversePrompting/)
+  - 论文名称：Controllable Generation from Pre-trained Language Models via Inverse Prompting
+  - 会议：KDD 2021 Research Track
+  - 论文链接：https://www.aminer.cn/pub/605869d391e011537aff4c3c
+  - 动机：大规模预训练语言模型在生成仿真文本时有强大的功能。但控制生成的结果使之符合给定的需求仍然有着巨大的困难。之前能够控制生成的方式寥寥无几，比如“给定前文”的方法，只能够控制生成文本中开头的一些文字的导向，而后面则会随着生成的长度渐渐增加而渐渐离题万里。
+  - 论文方法：提出了“反向提示”（Inverse Prompting）的方法，在搜索最佳生成结果的过程中以“能否还原给定的主题”为搜索准则，生成文本。
+  - 实验结果：生成的诗歌和问答在真人评分中均获得了很好的结果，取得了接近人类的水平。
+- [【关于 Response Generation with Context-Aware Prompt Learning】 那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/prompt/Prompts2QA/)
+  - 论文名称：Response Generation with Context-Aware Prompt Learning
+  - 论文链接：https://arxiv.org/pdf/2111.02643.pdf
+  - 思路：该论文设计了一个新颖的动态prompt编码器来鼓励上下文感知的prompt learning，以更好地重利用大规模预训练语言模型中的知识并生成更有知识的回复。
+    - 首先将上文文本的embedding送入可学习的prompt编码器中获得感知上文的prompt编码表示，再同时利用prompt的编码表示和上文文本来预测下文。
+
+###### [【关于 Prompts2Summarization】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/prompt/Prompts2Summarization/) 
+
+- [【关于 Planning with Learned Entity Prompts for Abstractive Summarization】 那些你不知道的事]([)](https://github.com/km1994/nlp_paper_study/tree/master/prompt/Prompts2Summarization/EntityPromptsForAbstractiveSummarization)
+  - 动机：我们引入了一种简单而灵活的机制来学习中间计划，以实现抽象摘要的生成。
+  - 做法：
+    1. 在目标摘要前加上(or prompt)实体链——摘要中提到的实体的有序序列；
+    2. 然后训练 Transformer-based sequence-to-sequence models 生成实体链，然后继续生成以实体链和输入为条件的摘要；
 
 ###### 【关于 Prompt For NER】 那些的你不知道的事
 
