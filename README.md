@@ -41,6 +41,7 @@
           - [transformer 变体综述篇](#transformer-变体综述篇)
         - [【关于 预训练模型】 那些的你不知道的事](#关于-预训练模型-那些的你不知道的事)
         - [【关于 Prompt】 那些的你不知道的事](#关于-prompt-那些的你不知道的事)
+          - [【关于 OpenPrompt 】 那些的你不知道的事](#关于-openprompt--那些的你不知道的事)
           - [【关于 Prompts2QA 】 那些的你不知道的事](#关于-prompts2qa--那些的你不知道的事)
           - [【关于 Prompts2Summarization】 那些的你不知道的事](#关于-prompts2summarization-那些的你不知道的事)
           - [【关于 Prompt For NER】 那些的你不知道的事](#关于-prompt-for-ner-那些的你不知道的事)
@@ -91,6 +92,7 @@
         - [【关于 Text-to-SQL】那些你不知道的事](#关于-text-to-sql那些你不知道的事)
         - [【关于 多标签文本分类】 那些你不知道的事](#关于-多标签文本分类-那些你不知道的事)
         - [【关于 tts】 那些你不知道的事](#关于-tts-那些你不知道的事)
+        - [【关于 img2text】 那些你不知道的事](#关于-img2text-那些你不知道的事)
       - [实战篇](#实战篇)
         - [重点推荐篇](#重点推荐篇)
     - [会议收集篇](#会议收集篇)
@@ -426,7 +428,23 @@
       - （2）训练跨度边界表示来预测屏蔽跨度的整个内容，而不依赖其中的单个标记表示。
     - 实验结果：
       - SpanBERT始终优于BERT和我们更好调整的基线，在跨选择任务（如问题回答和共指消解）上有实质性的收益。特别是在训练数据和模型大小与BERT-large相同的情况下，我们的单一模型在1.1班和2.0班分别获得94.6%和88.7%的F1。我们还实现了OntoNotes共指消解任务（79.6\%F1）的最新发展，在TACRED关系抽取基准测试上表现出色，甚至在GLUE上也有所提高。
-
+  - [【关于 Flan-T5 】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study/bert_study/FlanT5)
+    - 论文名称：Scaling Instruction-Finetuned Language Models
+    - 会议：
+    - 论文地址：https://arxiv.org/abs/2210.11416
+    - 论文源码地址：https://huggingface.co/google/flan-t5-xxl
+    - 动机：是否有这种方案：通过在超大规模的任务上进行微调，让语言模型具备了极强的泛化性能，做到单个模型就可以在1800多个NLP任务上都能有很好的表现呢？即 实现 **One model for ALL tasks**？
+    - Flan-T5 介绍：这里的Flan 指的是（Instruction finetuning ），即"基于指令的微调"；T5是2019年Google发布的一个语言模型了。注意这里的语言模型可以进行任意的替换（需要有Decoder部分，所以不包括BERT这类纯Encoder语言模型），论文的核心贡献是提出一套多任务的微调方案（Flan），来极大提升语言模型的泛化性。
+    - Flan-T5 实现机制
+      - step 1: 任务收集：收集一系列监督的数据，这里一个任务可以被定义成<数据集，任务类型的形式>，比如“基于SQuAD数据集的问题生成任务”。需要注意的是这里有9个任务是需要进行推理的任务，即Chain-of-thought （CoT）任务。
+      - step 2: 形式改写：因为需要用单个语言模型来完成超过1800+种不同的任务，所以需要将任务都转换成相同的“输入格式”喂给模型训练，同时这些任务的输出也需要是统一的“输出格式”。
+      - 训练过程：采用恒定的学习率以及Adafactor优化器进行训练；同时会将多个训练样本“打包”成一个训练样本，这些训练样本直接会通过一个特殊的“结束token”进行分割。训练时候在每个指定的步数会在“保留任务”上进行模型评估，保存最佳的checkpoint。
+    - 总结：
+      - 微调很重要
+      - 模型越大效果越好
+      - 任务越多效果越好
+      - 混杂CoT相关的任务很重要
+      - 整合起来
 
 - [【关于 Bert 模型压缩】 那些你不知道的事](https://github.com/km1994/nlp_paper_study_bert/tree/master/bert_study/Bert_zip)
   - [【关于 Bert 模型压缩】 那些你不知道的事](https://github.com/km1994/nlp_paper_study_bert/tree/master/bert_study/Bert_zip)
@@ -560,6 +578,20 @@
 
 ##### 【关于 Prompt】 那些的你不知道的事
 
+###### [【关于 OpenPrompt 】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/prompt/OpenPrompt/)
+
+- [【关于 OpenPrompt 】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/prompt/OpenPrompt/)
+  - OpenPrompt： An Open-source Framework for Prompt-learning
+  - 论文链接：https://arxiv.org/abs/2111.01998
+  - 论文 github 地址：https://github.com/thunlp/OpenPrompt
+  - 动机：
+    - 目前还没有提出 Prompt-learning 的标准实施框架，大多数现有的 Prompt-learning 代码库，往往是不规范的，只为特定场景提供有限的实现；
+    - 由于在 Prompt-learning 中需要考虑许多细节，如模板策略、初始化策略和口语化策略等，从业者在快速调整所需的提示学习方法以适应其应用方面面临着障碍。
+  - OpenPrompt 特点
+    - OpenPrompt是一个便于研究的框架，它具有高效、模块化和可扩展性，其可组合性允许在一个统一的范式中自由组合不同的PLM、任务格式和提示模块；
+    - 用户可以方便地部署 Prompt-learning 框架，并评估它们在不同的NLP任务上的泛化性，不受限制
+
+
 ###### [【关于 Prompts2QA 】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/prompt/Prompts2QA/)
 
 - [【关于 基于反向提示的预训练模型可控文本生成】 那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/prompt/Prompts2QA/ControllableGenerationFromPLMviaInversePrompting/)
@@ -577,7 +609,7 @@
 
 ###### [【关于 Prompts2Summarization】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/prompt/Prompts2Summarization/) 
 
-- [【关于 Planning with Learned Entity Prompts for Abstractive Summarization】 那些你不知道的事]([)](https://github.com/km1994/nlp_paper_study/tree/master/prompt/Prompts2Summarization/EntityPromptsForAbstractiveSummarization)
+- [【关于 Planning with Learned Entity Prompts for Abstractive Summarization】 那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/prompt/Prompts2Summarization/EntityPromptsForAbstractiveSummarization)
   - 动机：我们引入了一种简单而灵活的机制来学习中间计划，以实现抽象摘要的生成。
   - 做法：
     1. 在目标摘要前加上(or prompt)实体链——摘要中提到的实体的有序序列；
@@ -639,6 +671,14 @@
     - 设计了一种结构化抽取语言(Structural Extraction Language, SEL)，它能够将四种信息抽取任务的不同结构统一描述，使得模型的输出结构针对不同任务都是一致的。
     - 由于模型可以做多个任务，所以需要一种方式去指导模型做指定的任务，因此作者设计了结构化模式指导器(Structural Schema Instructor, SSI)，其实这就是一种prompt。
     - 由于模型的输出都是符合SEL语法的结构化信息，而目前常用的生成式预训练模型如T5、BART都是以生成自然语言为主，若直接采用这种预训练模型会影响到模型性能，因此作者专门针对text to structure的结构来预训练了一个大模型
+- [【关于 USM 】 那些你不知道的事](https://github.com/km1994/nlp_paper_study_information_extraction/tree/master/information_extraction/all_extraction/USM_AAAI2023/) 
+  - 论文：Universal Information Extraction as Unified Semantic Matching
+  - 会议：AAAI2023
+  - 论文地址：https://arxiv.org/abs/2301.03282
+  - 动机：
+    - 传统的信息抽取方法：需要**针对特定的任务进行模型设计和数据标注**，使得难以推广到新的模式中，极大限制了IE系统的使用；
+    - UIE 由于**Seq2Seq的生成模型的黑盒特性**，导致无法判断跨任务或跨模式的迁移在什么情况下会成功or失败
+  - 思路：提出了一种统一的语义匹配框架——USM，它联合编码提取模式和输入文本，并行统一提取子结构，并根据需要对目标结构进行可控解码。
 
 ###### [【关于 实体关系联合抽取】那些的你不知道的事](https://github.com/km1994/nlp_paper_study_information_extraction/tree/master/information_extraction/ERE_study/)
 
@@ -1842,6 +1882,13 @@
      2. （2）情节-回复匹配，其能够反映回复是否与情节相符；
      3. （3）上文-情节匹配，其能够隐式反映哪些情节已经被上文表达。
   4. 最后，这些匹配特征经过CNN的进一步抽取和聚集，再经过MLP得到最终的匹配得分。
+- [【关于 GENIUS 】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/text_generation/GENIUS/)
+  - 论文：GENIUS: Sketch-based Language Model Pre-training via Extreme and Selective Masking for Text Generation and Augmentation
+  - 发表会议：
+  - 论文地址：https://arxiv.org/abs/2211.10330v1
+  - github：https://github.com/beyondguo/genius
+  - demo：https://huggingface.co/spaces/beyond/genius
+  - GENIUS模型，是一个conditional text generation (CLM) 预训练模型，能根据你给定的一个sketch（草稿，包含你要表达的关键信息，可以是词、短语、短句），来生成一段完整流畅的文本
 
 ##### [【关于 NLP分类任务】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/classifier_study/)
 
@@ -2120,6 +2167,18 @@
       - 1. encoder将phoneme embedding转换成phoneme hidden seq;
       - 2. 然后设计了variance adaptor引入不同的声学特征信息;
       - 3. 最终decoder将adapted hidden seq并行地转换成mel谱。
+  - [【关于 VITS】 那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/tts/VITS/)
+
+##### [【关于 img2text】 那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/img2text/)
+
+- [【关于 BLIP-2 】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/img2text/blip2)
+  - [BLIP-2 模型文档](https://hf.co/docs/transformers/main/en/model_doc/blip-2)
+  - [BLIP-2 论文链接](https://arxiv.org/pdf/2301.12597.pdf)
+  - 模型介绍：BLIP-2 通过**在冻结的预训练图像编码器和冻结的预训练大语言模型之间添加一个轻量级 查询 Transformer (Query Transformer, Q-Former) 来弥合视觉和语言模型之间的模态隔阂 (modality gap)**。在整个模型中，Q-Former 是唯一的可训练模块，而图像编码器和语言模型始终保持冻结状态。
+- [【关于 OFA-Chinese】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/img2text/OFA_Chinese)
+  - 论文标题：Unifying Architectures, Tasks, and Modalities Through a Simple Sequence-to-Sequence Learning Framework
+  - github ：https://github.com/yangjianxin1/OFA-Chinese
+  - 介绍：OFA是由阿里达摩院发布的多模态预训练模型，OFA将各种模态任务统一于Seq2Seq框架中。如下图所示，OFA支持的下游任务包括但不限于Image Caption、Image Classification、 Image genaration、Language Understanding等等。
 
 #### 实战篇
 
