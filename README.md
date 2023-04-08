@@ -25,7 +25,10 @@
 
 > 手机版笔记，可以关注公众号 **【关于NLP那些你不知道的事】** 获取，并加入 【NLP && 推荐学习群】一起学习！！！
 
-> 注：github 网页版 看起来不舒服，可以看 **[手机版NLP论文学习笔记](https://mp.weixin.qq.com/s?__biz=MzAxMTU5Njg4NQ==&mid=100005719&idx=1&sn=14d34d70a7e7cbf9700f804cca5be2d0&chksm=1bbff26d2cc87b7b9d2ed12c8d280cd737e270cd82c8850f7ca2ee44ec8883873ff5e9904e7e&scene=18#wechat_redirect)**
+> 注：github 网页版 看起来不舒服，可以加入 **知识星球【关于AiGC那些你不知道的事】**
+
+> **所有文章已经搬到 知识星球【关于AiGC那些你不知道的事】，方便大家利用手机学习**
+![](other_study/resource/pic/20230408151226.jpg)
 
 - [【关于 NLP】 那些你不知道的事](#关于-nlp-那些你不知道的事)
   - [介绍](#介绍)
@@ -104,6 +107,7 @@
     - [学习资源](#学习资源)
     - [NLP 数据集](#nlp-数据集)
     - [GCN\_study学习篇](#gcn_study学习篇)
+  - [sponsorship 赞助](#sponsorship-赞助)
   - [参考资料](#参考资料)
 
 ## 介绍
@@ -219,7 +223,9 @@
   - 动机：Transformer 有着巨大的内存和算力需求，因为它构造了一个注意力矩阵，需求与输入呈平方关系;
   - 思路：使用一个高效的（线性）广义注意力框架（generalized attention framework），允许基于不同相似性度量（核）的一类广泛的注意力机制。
   - 优点：该方法在保持线性空间和时间复杂度的同时准确率也很有保证，也可以应用到独立的 softmax 运算。此外，该方法还可以和可逆层等其他技术进行互操作。
-
+- [ A Survey on Long Text Modeling with Transformers](https://github.com/km1994/nlp_paper_study_transformer/tree/master/DL_algorithm/transformer_study/Survey_on_Long_Text_Modeling_with_Transformers) 
+  - 论文名称：A Survey on Long Text Modeling with Transformers
+  - 论文地址：https://arxiv.org/abs/2302.14502
 
 ###### transformer 变体综述篇
 
@@ -1889,6 +1895,21 @@
   - github：https://github.com/beyondguo/genius
   - demo：https://huggingface.co/spaces/beyond/genius
   - GENIUS模型，是一个conditional text generation (CLM) 预训练模型，能根据你给定的一个sketch（草稿，包含你要表达的关键信息，可以是词、短语、短句），来生成一段完整流畅的文本
+- [Difformer - 在嵌入空间上增强扩散模型来做文本生成](https://github.com/km1994/nlp_paper_study/tree/master/text_generation/Difformer_2023/)
+  - 论文：Difformer:  empowering diffusion models on the embedding space for text generation
+  - 发表会议：
+  - 论文地址：https://arxiv.org/pdf/2212.09412.pdf
+  - 论文动机：
+    - 问题：“连续数据空间”和“嵌入空间”之间有挑战存在。
+      - 问题一，embeddings的data distribution是可学习的，这可能会导致Loss function崩溃；
+      - 问题二，常用词和偏僻词的embeddings向量的范数(norm）是有区别的，如果追加同样的噪声，会得到次优的结果。
+      - 问题三，作者发现，normal level of noise （普通水平下的噪声）会导致模型的训练不充分问题。
+  - 三个核心模块：
+    1. 一个额外的锚损失函数，anchor loss function，来稳定训练过程；
+    2. 一个面向embedding的layer normalization，放到embedding layer之上，来对常用词和偏僻词的嵌入进行归一化到一个uniform scale（统一的刻度，统一的尺寸），从而可以消除他们的多尺度的影响；
+    3. 一个给高斯噪声的噪声因子，noise factor，来提升增加的高斯噪声的刻度，来提升每一个扩散步上的，去噪目标的指导。
+
+
 
 ##### [【关于 NLP分类任务】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/classifier_study/)
 
@@ -1957,6 +1978,19 @@
   - 会议：EMNLP2020
   - 论文地址：chrome-extension://ikhdkkncnoglghljlkmcimlnlhkeamad/pdf-viewer/web/viewer.html?file=https%3A%2F%2Faclanthology.org%2F2021.eacl-main.20.pdf#=&zoom=125
   - 论文源码地址：https://github.com/timoschick/pet
+- [【关于 LTA 】那些你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/classifier_study/LTA/)
+  - 论文名称：Learn to Adapt for Generalized Zero-Shot Text Classification
+  - 会议：ACL2022
+  - 论文地址：https://aclanthology.org/2022.acl-long.39
+  - 论文源码地址：https://github.com/Quareia/LTA
+  - 论文动机：
+    - 广义零样本（Zero-shot）文本分类旨在对可见类（seen classes）和增量出现的未见类（unseen classes）的文本实例进行分类。
+    - 由于参数在学习过程中仅对可见类进行优化，而未考虑未见类，且参数在预测过程中保持稳定，因此大多数现有方法的泛化能力较差。
+  - 论文方法：
+    - 提出了一个**新的学习适应（Learn to Adapt，LTA）网络**，该网络使用一个可变的元学习框架。
+    - 具体而言，**LTA 通过使用可见类和虚拟的未见类来训练自适应分类器**，根据测试时间模拟广义零样本学习（generalized zero-shot learning，GZSL）场景。
+    - 与此同时，**学习校准类原型（prototype）和样本表示，使学习参数适应传入的未见类**。
+    - 作者声称，所提出的模型能够表征所有的原型和样本。将两个类映射到到一个分布更一致的全局空间。
 
 ###### [【关于 细粒度情感分析】 那些的你不知道的事](https://github.com/km1994/nlp_paper_study/tree/master/classifier_study/ABSC_study/)
 
@@ -2414,6 +2448,24 @@
   - [DGL](https://github.com/km1994/dgl)
   - [DGL 入门](https://github.com/km1994/GCN_study/blob/master/DGL_study/DGL_introduction.md)
   - [DGL 入门 —— GCN 实现](https://github.com/km1994/GCN_study/blob/master/DGL_study/DGL_GCN_introduction.md)
+
+## sponsorship 赞助
+
+Top 3 Sponsors
+
+| Time     | Sponsor     | Amount |
+| --- | --- | --- |
+| 2021/3/25 | 林*  | 500 |
+| 2022/6/24 | 李*     | 200    |
+
+这原本是个人的一个学习项目，我们原本计划编写到1.0为止。但是由于 这个项目 帮助到了 社区里面很多 nlper 超过了我们的想象。如果您愿意赞助我们的项目，可以
+
+扫描这个[二维码](https://github.com/km1994/GCN_study/blob/master/resource/pic/zfb.jpg)
+
+并且加这个支付宝账号，留下您的姓名
+
+项目的资金流向将被公开，所有的资金将被用于该学习项目的开支。我们会总结在sponsorship的表格中。备用链接 二维码 , 支付宝账号
+
 
 ## 参考资料
 
